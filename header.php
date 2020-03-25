@@ -19,12 +19,43 @@
     <!--[if lt IE 9]>
 	   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
-<?php wp_head();?>	
+<?php wp_head();?>
 </head>
     
 <body>
-	<header>
-		
+	<header class="container">
+		<section class="header-logo_container row">
+			<div class="header-logo col">
+				<img src="<?php images();?>/logo.png"
+					 alt="Bookshop name goes here"
+					 title="Bookshop Name"
+					 >
+			</div>
+		</section>
+		<nav class="row">
+			<ul role="navigation">
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Books</a>
+				</li>
+				<li>
+					<a href="#">Events</a>
+				</li>
+				<li>
+					<a href="#">About</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+				<li class="social-media_links">
+					<a href="#"><span><i class="fab fa-facebook-f"></i></span></a>
+					<a href="#"><span><i class="fab fa-instagram"></i></span></a>
+					<a href="#"><span><i class="fab fa-twitter"></i></span></a>
+				</li>
+			</ul>
+		</nav>
 	</header>
 	
-	<main id="page-wrap">
+	<main id="page-wrap" class="container">

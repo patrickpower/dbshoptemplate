@@ -5,6 +5,7 @@ Author: Patrick Power
 Author URI: https://patrickpower.design
 Version: 1
 */
+@import url("https://fonts.googleapis.com/css?family=Muli:400,400i,600,600i&display=swap");
 /* Mixins */
 /* Usage: @include phone { css here } */
 .col-fifth {
@@ -507,4 +508,102 @@ Version: 1
 html, body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-family: "Muli","Open Sans","Arial",sans-serif; }
+  html a, body a {
+    color: inherit; }
+
+:root {
+  --highlightColor:yellow;
+  --headerHeight:240px;
+  --footerHeight:auto; }
+  @media (min-width: 992px) {
+    :root {
+      --footerHeight:210px; } }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 960px; } }
+
+footer {
+  height: var(--footerHeight);
+  margin-top: calc(var(--footerHeight) * -1);
+  background-color: #f3f3f3; }
+
+header {
+  height: var(--headerHeight); }
+
+.header-logo_container {
+  padding: 60px 0 45px; }
+
+.header-logo {
+  text-align: center; }
+  .header-logo img {
+    width: 100%;
+    max-width: 500px; }
+
+.homepage_banner-image {
+  margin-top: 60px; }
+  .homepage_banner-image img {
+    max-width: 100%; }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-evenly;
+  -moz-justify-content: space-evenly;
+  -ms-justify-content: space-evenly;
+  justify-content: space-evenly;
+  -ms-flex-pack: space-evenly; }
+  @media (min-width: 992px) {
+    nav ul {
+      width: 90%; } }
+  nav ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.85rem;
+    font-weight: 600; }
+    nav ul li.social-media_links span {
+      padding: 0 5px; }
+
+#page-wrap {
+  min-height: calc(100vh - var(--headerHeight));
+  padding-bottom: var(--footerHeight); }
+
+.section-title_container {
+  position: relative; }
+  .section-title_container h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    display: inline-block; }
+    .section-title_container h1::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      background: white;
+      left: -3%;
+      top: 0;
+      width: 106%;
+      z-index: -1; }
+  .section-title_container::after {
+    content: "";
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: #ccc;
+    left: 15px;
+    top: 50%;
+    z-index: -2;
+    position: absolute; }

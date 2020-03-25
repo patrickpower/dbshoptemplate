@@ -5,7 +5,7 @@ Author: Patrick Power
 Author URI: https://patrickpower.design
 Version: 1
 */
-
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,600,600i&display=swap');
 @import 'flex-mixins';
 @import 'winston';
 
@@ -13,8 +13,120 @@ html, body {
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
 	scroll-behavior: smooth;
+	font-family:"Muli","Open Sans","Arial",sans-serif;
+	& a {
+		color:inherit;
+	}
 }
 
 :root {
+	--highlightColor:yellow;
+	--headerHeight:240px;
+	--footerHeight:auto;
+	@include desktop {
+		--footerHeight:210px;
+	}
+}
+
+.container {
+	@include xl {
+		max-width:960px;
+	}
+}
+
+footer {
+	height:var(--footerHeight);
+	margin-top:calc(var(--footerHeight) * -1);
+	background-color:#f3f3f3;
+}
+
+header {
+	height:var(--headerHeight);
+}
+
+.header-logo_container {
+	padding:60px 0 45px;
+}
+
+.header-logo {
+	text-align:center;
+	
+	& img { // Main logo
+		width:100%;
+		max-width:500px;
+	}
+}
+
+.homepage_banner-image {
+	margin-top:60px;
+	& img {
+		max-width:100%;
+	}
+}
+
+nav ul {
+	list-style: none;
+	padding:0;
+	width:100%;
+	margin:0 auto;
+	@include display_flex();
+	@include justify-content(space-evenly);
+	@include desktop {
+		width:90%;
+	}
+	& li {
+		display:inline-block;
+		text-transform:uppercase;
+		letter-spacing:0.2rem;
+		font-size:0.85rem;
+		font-weight:600;
+		&.social-media_links {
+			& span {
+				padding:0 5px;
+			}
+		}
+	}
+}
+
+
+
+#page-wrap {
+	min-height:calc(100vh - var(--headerHeight));
+	padding-bottom:var(--footerHeight);
+}
+
+.section-title_container {
+	position:relative;
+	& h1 {
+		text-transform:uppercase;
+		letter-spacing:0.5rem;
+		text-align:center;
+		font-size:1.1rem;
+		position:relative;
+		z-index:1;
+		margin:0;
+		display:inline-block;
+		&::after{
+			content:"";
+			position:absolute;
+			height:100%;
+			background:white;
+			left:-3%;
+			top:0;
+			width:106%;
+			z-index:-1;
+		}
+	}
+	
+	&::after {
+		content:"";
+		width:calc(100% - 30px);
+		height:1px;
+		background-color:#ccc;
+		left:15px;
+		top:50%;
+		z-index:-2;
+		position:absolute;
+	}
 	
 }
