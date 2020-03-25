@@ -1,0 +1,11 @@
+/*
+Theme Winston Design Theme
+URI:  winston-design.com
+Author: Winston Design
+Author URI: http://winston-design.com
+Version: 2.1
+*/
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  -webkit-font-smoothing: anti-aliased; }

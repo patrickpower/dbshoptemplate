@@ -1,0 +1,20 @@
+/*
+Theme Name: Patrick Power Design
+URI:  patrickpower.design
+Author: Patrick Power
+Author URI: https://patrickpower.design
+Version: 1
+*/
+
+@import 'flex-mixins';
+@import 'winston';
+
+html, body {
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+	scroll-behavior: smooth;
+}
+
+:root {
+	
+}
