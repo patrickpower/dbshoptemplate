@@ -519,7 +519,10 @@ html, body {
   --footerHeight:auto; }
   @media (min-width: 992px) {
     :root {
-      --footerHeight:210px; } }
+      --footerHeight:280px; } }
+  @media (max-width: 576px) {
+    :root {
+      font-size: 80%; } }
 
 @media (min-width: 1200px) {
   .container {
@@ -529,6 +532,17 @@ footer {
   height: var(--footerHeight);
   margin-top: calc(var(--footerHeight) * -1);
   background-color: #f3f3f3; }
+
+.footer-inner {
+  padding-top: 30px; }
+
+.footer-inner ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.footer-logo {
+  margin-bottom: 30px; }
 
 header {
   height: var(--headerHeight); }
@@ -542,10 +556,112 @@ header {
     width: 100%;
     max-width: 500px; }
 
+.highlight {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, var(--highlightColor) 50%); }
+
 .homepage_banner-image {
-  margin-top: 60px; }
+  margin-top: 60px;
+  margin-bottom: 60px; }
   .homepage_banner-image img {
     max-width: 100%; }
+
+.homepage_book {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer; }
+  .homepage_book:hover * {
+    color: #666; }
+  .homepage_book:hover img {
+    opacity: 0.9; }
+  @media (max-width: 576px) {
+    .homepage_book {
+      margin-bottom: 60px; } }
+  @media (min-width: 577px) {
+    .homepage_book:nth-of-type(4) {
+      display: none; } }
+  @media (min-width: 769px) {
+    .homepage_book:nth-of-type(4) {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex; } }
+  .homepage_book:nth-of-type(5), .homepage_book:nth-of-type(6) {
+    display: none; }
+    @media (min-width: 992px) {
+      .homepage_book:nth-of-type(5), .homepage_book:nth-of-type(6) {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex; } }
+  .homepage_book img {
+    max-width: 100%; }
+  .homepage_book p {
+    margin-bottom: 0px; }
+
+p.homepage_book-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.2; }
+
+.homepage_books-row {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  -webkit-align-items: baseline;
+  -moz-align-items: baseline;
+  -ms-align-items: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline; }
+
+.homepage_events {
+  margin-top: 60px;
+  margin-bottom: 60px; }
+
+.homepage_find-us {
+  padding-top: 60px;
+  margin-bottom: 60px; }
+
+.homepage-instagram {
+  margin-top: 60px;
+  margin-bottom: 60px; }
+
+.homepage_single-event {
+  padding-left: 60px;
+  position: relative;
+  cursor: pointer; }
+  .homepage_single-event::before {
+    content: "";
+    width: 27px;
+    height: 45px;
+    position: absolute;
+    left: 15px;
+    top: 6px;
+    background-image: url(images/ticket.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat; }
+  .homepage_single-event h2 {
+    font-size: 1.3rem;
+    margin-bottom: 5px; }
+  .homepage_single-event h3 {
+    font-size: 1.25rem;
+    font-style: italic; }
+  .homepage_single-event p {
+    font-size: 0.8rem; }
+  .homepage_single-event:hover * {
+    color: #666666; }
+  @media (max-width: 768px) {
+    .homepage_single-event {
+      margin-bottom: 60px; } }
 
 nav ul {
   list-style: none;
@@ -574,6 +690,10 @@ nav ul {
     nav ul li.social-media_links span {
       padding: 0 5px; }
 
+.no-events_notice {
+  width: 100%;
+  text-align: center; }
+
 #page-wrap {
   min-height: calc(100vh - var(--headerHeight));
   padding-bottom: var(--footerHeight); }
@@ -587,16 +707,16 @@ nav ul {
     font-size: 1.1rem;
     position: relative;
     z-index: 1;
-    margin: 0;
+    margin: 0 -0.5rem 0 0;
     display: inline-block; }
     .section-title_container h1::after {
       content: "";
       position: absolute;
       height: 100%;
       background: white;
-      left: -3%;
+      left: -30px;
       top: 0;
-      width: 106%;
+      width: calc(100% + 60px);
       z-index: -1; }
   .section-title_container::after {
     content: "";
@@ -607,3 +727,7 @@ nav ul {
     top: 50%;
     z-index: -2;
     position: absolute; }
+    @media (max-width: 576px) {
+      .section-title_container::after {
+        top: auto;
+        bottom: -15px; } }
