@@ -512,6 +512,8 @@ html, body {
   font-family: "Muli","Open Sans","Arial",sans-serif; }
   html a, body a {
     color: inherit; }
+    html a.no-underline:hover, body a.no-underline:hover {
+      text-decoration: none; }
 
 :root {
   --highlightColor:yellow;
@@ -528,10 +530,57 @@ html, body {
   .container {
     max-width: 960px; } }
 
+p.event-date {
+  font-weight: 600;
+  font-size: 1.2rem; }
+
+.event-subtitle {
+  font-size: 2.5rem;
+  font-style: italic; }
+
+.event-ticket_external-link, .event-ticket-text {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  font-weight: 600;
+  font-size: 1.1rem; }
+
+@media (min-width: 769px) {
+  .event-ticket-text {
+    padding-left: 35px;
+    position: relative; }
+    .event-ticket-text::before {
+      content: "";
+      width: 45px;
+      height: 45px;
+      background-image: url(images/ticket.jpg);
+      background-size: 20px;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 5px;
+      left: 15px; } }
+
+.event-title_container {
+  margin-bottom: 30px; }
+
 footer {
   height: var(--footerHeight);
   margin-top: calc(var(--footerHeight) * -1);
-  background-color: #f3f3f3; }
+  background-color: #f3f3f3;
+  position: relative;
+  padding-bottom: 30px; }
+
+.footer-end {
+  background-color: black;
+  color: white;
+  padding: 5px 0;
+  height: 30px;
+  font-size: 80%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0; }
+  .footer-end p {
+    margin: 0; }
 
 .footer-inner {
   padding-top: 30px; }

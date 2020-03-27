@@ -38,3 +38,11 @@ function enqueues() //Enqueue the CSS & jQuery files...
 		//wp_enqueue_script( 'slick');
 }
 add_action( 'wp_enqueue_scripts', 'enqueues' ); // PRESS PLAY ON THE ABOVE
+
+get_template_part('functions/create_events');
+get_template_part('functions/events_meta');
+get_template_part('functions/events_title');
+get_template_part('functions/events_date');
+get_template_part('functions/event_images');
+get_template_part('functions/events_tickets');
+get_template_part('functions/event_image_options');

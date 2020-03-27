@@ -26,10 +26,12 @@
 	<header class="container">
 		<section class="header-logo_container row">
 			<div class="header-logo col">
+				<a href="/">
 				<img src="<?php images();?>/logo.png"
 					 alt="Bookshop name goes here"
 					 title="Bookshop Name"
 					 >
+				</a>
 			</div>
 		</section>
 		<nav class="row">

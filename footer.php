@@ -56,6 +56,15 @@
 				</section>
 			</div>
 		</section>
+		<section class="footer-end container-fluid">
+			<div class="footer-end_inner container">
+				<div class="row">
+					<div class="col">
+						<p class="text-center">&copy; Bookshop <?php echo date('Y');?></p>
+					</div>
+				</div>
+			</div>
+		</section>
 	</footer>
 	
 <?php wp_footer(); ?>

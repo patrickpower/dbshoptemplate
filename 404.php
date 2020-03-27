@@ -8,7 +8,9 @@
 	</section>
 	<section class="page-body row">
 		<div class="col">
-			
+			<p class="text-center">
+				What you're looking for is no longer here.
+			</p>
 		</div>
 	</section>
 
