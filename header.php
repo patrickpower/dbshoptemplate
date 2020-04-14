@@ -11,7 +11,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="<?php echo rwmb_meta( 'highlight_colour', ['object_type' => 'setting'], 'shop_options' );?>">
 	<meta name="description" content="">
-	<link rel="icon" type="image/png" href="<?php images();?>/favicon.png" />
+	<?php $favicon = rwmb_meta( 'favicon', ['object_type' => 'setting'], 'shop_options' );
+		if($favicon){
+		foreach ($favicon as $image){
+			$id = $image['ID'];
+			$imageSrc = wp_get_attachment_image_src($id,'full')[0];
+		?>
+			<link rel="icon" type="image/png" href="<?php echo $imageSrc;?>" />
+		<?php } }
+	?>
+	
 	<title>
     <?php 
         
