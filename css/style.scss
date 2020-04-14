@@ -386,7 +386,7 @@ header {
 	@include device {
 		@include order(-2);
 		width: 100vw;
-		@include prefix(transform, translateX(50vw),webkit moz ms o);
+		@include prefix(transform, translateX(-50vw),webkit moz ms o);
 		margin: -60px 0 30px 50%;
 		& > .col {
 			padding:0;
