@@ -53,7 +53,7 @@
 
 <section class="homepage-instagram row">
 	<div class="col-12">
-		<?php echo do_shortcode('[instagram-feed]');?>
+		<?php echo do_shortcode('[instagram-feed num=4 cols=4 showheader=false showbutton=false showfollow=false ]');?>
 	</div>
 </section>
 <?php }?>

@@ -21,7 +21,7 @@
 			);
 			$events = get_posts($args);
 			if(!$events) {
-				echo "We currently have no events lined up";
+				echo "<p class='text-center'>Unfortunately we currently have no events lined up. Please sign up to our newsletter to find out when events are announced.</p>";
 			} else {
 				foreach($events as $event){
 				$id = $event->ID;
