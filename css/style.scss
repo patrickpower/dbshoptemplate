@@ -464,8 +464,6 @@ p.homepage_book-title {
     @include prefix(transform, translateX(-50vw),webkit moz ms o);
     padding: 60px var(--gutter);
 	background-color:#f3f3f3;
-    background: var(--footerBackgroundColour);
-	color:var(--footerTextColour);
     margin: 60px 0 60px 50%;
 }
 
@@ -593,7 +591,7 @@ nav ul {
 				padding:0 5px;
 			}
 		}
-		&:hover {
+		&:not(.social-media_links):hover {
 			& a {
 				text-decoration:none;
 				color:#666666;
@@ -900,7 +898,9 @@ p.reserve_button_modal_content {
 .similar-books_container {
 	padding-top:45px;
 	padding-bottom:60px;
-	
+	@include desktop {
+		@include justify-content(center);
+	}
 }
 
 .single_book-cover,
