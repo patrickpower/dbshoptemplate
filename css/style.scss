@@ -383,10 +383,11 @@ header {
 		
 		max-width:100%;
 	}
-	@include phone {
+	@include device {
 		@include order(-2);
 		width: 100vw;
-		margin: -60px 0 30px -15px;
+		@include prefix(transform, translateX(50vw),webkit moz ms o);
+		margin: -60px 0 30px 50%;
 		& > .col {
 			padding:0;
 		}

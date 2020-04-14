@@ -846,7 +846,7 @@ header {
   margin-bottom: 60px; }
   .homepage_banner-image img {
     max-width: 100%; }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     .homepage_banner-image {
       -webkit-box-ordinal-group: -2;
       -moz-box-ordinal-group: -2;
@@ -854,7 +854,12 @@ header {
       -webkit-order: -2;
       order: -2;
       width: 100vw;
-      margin: -60px 0 30px -15px; }
+      -webkit-transform: translateX(50vw);
+      -moz-transform: translateX(50vw);
+      -ms-transform: translateX(50vw);
+      -o-transform: translateX(50vw);
+      transform: translateX(50vw);
+      margin: -60px 0 30px 50%; }
       .homepage_banner-image > .col {
         padding: 0; } }
 
