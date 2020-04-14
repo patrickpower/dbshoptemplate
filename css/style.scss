@@ -348,9 +348,12 @@ header {
 	padding:0;
 	@include display_flex();
 	@include align-items(center);
+	height:185px;
 	@include device {
 		z-index:4;
-		padding:30px 0;
+	}
+	@include device {
+		height:var(--headerHeight);
 	}
 }
 

@@ -817,11 +817,14 @@ header {
   -moz-align-items: center;
   -ms-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  height: 185px; }
   @media (max-width: 991px) {
     .header-logo_container {
-      z-index: 4;
-      padding: 30px 0; } }
+      z-index: 4; } }
+  @media (max-width: 991px) {
+    .header-logo_container {
+      height: var(--headerHeight); } }
 
 .header-logo {
   text-align: center; }
