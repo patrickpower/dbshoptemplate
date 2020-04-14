@@ -807,7 +807,17 @@ header {
         max-width: none; } }
 
 .header-logo_container {
-  padding: 60px 0 45px; }
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
   @media (max-width: 991px) {
     .header-logo_container {
       z-index: 4;
@@ -817,7 +827,7 @@ header {
   text-align: center; }
   .header-logo img {
     width: auto;
-    max-height: 80px;
+    max-height: 120px;
     max-width: 500px; }
     @media (max-width: 991px) {
       .header-logo img {
