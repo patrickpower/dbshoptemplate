@@ -846,6 +846,17 @@ header {
   margin-bottom: 60px; }
   .homepage_banner-image img {
     max-width: 100%; }
+  @media (max-width: 768px) {
+    .homepage_banner-image {
+      -webkit-box-ordinal-group: -2;
+      -moz-box-ordinal-group: -2;
+      -ms-flex-order: -2;
+      -webkit-order: -2;
+      order: -2;
+      width: 100vw;
+      margin: -60px 0 30px -15px; }
+      .homepage_banner-image > .col {
+        padding: 0; } }
 
 .homepage_book {
   display: -webkit-box;
@@ -1175,6 +1186,17 @@ section.page-body {
   @media (max-width: 991px) {
     #page-wrap {
       padding-top: 60px; } }
+  @media (max-width: 768px) {
+    #page-wrap.homepage {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
 
 #reserve_a_book {
   overflow: auto; }

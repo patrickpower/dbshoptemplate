@@ -148,4 +148,4 @@
 		</nav>
 	</header>
 	
-	<main id="page-wrap" class="container">
+	<main id="page-wrap" class="container<?php if(is_home){echo " homepage";}?>">

@@ -382,6 +382,14 @@ header {
 	& img {
 		max-width:100%;
 	}
+	@include phone {
+		@include order(-2);
+		width: 100vw;
+		margin: -60px 0 30px -15px;
+		& > .col {
+			padding:0;
+		}
+	}
 }
 
 .homepage_book {
@@ -721,6 +729,12 @@ section.page-body {
 	padding-top:30px;
 	@include device {
 		padding-top:60px;
+	}
+	@include phone {
+		&.homepage {
+			@include display_flex();
+			@include flex-direction(column);
+		}
 	}
 }
 
