@@ -979,7 +979,7 @@ p.homepage_book-title {
 .hours p {
   line-height: 2; }
 
-.mc4wp-form-fields {
+.mc4wp-form-theme .mc4wp-form-fields {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -995,26 +995,26 @@ p.homepage_book-title {
   -ms-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center; }
-  .mc4wp-form-fields p {
+  .mc4wp-form-theme .mc4wp-form-fields p {
     display: inline-block;
     position: relative; }
-  .mc4wp-form-fields label {
+  .mc4wp-form-theme .mc4wp-form-fields label {
     position: absolute;
     top: 5px;
     left: 15px;
     font-size: 60%;
     color: grey;
     display: none; }
-  .mc4wp-form-fields input[type="email"] {
+  .mc4wp-form-theme .mc4wp-form-fields input[type="email"] {
     padding: 15px 15px 15px 12px;
     width: 500px;
     max-width: 100%; }
     @media (max-width: 768px) {
-      .mc4wp-form-fields input[type="email"] {
+      .mc4wp-form-theme .mc4wp-form-fields input[type="email"] {
         max-width: 90%;
         margin: 0 auto;
         display: block; } }
-  .mc4wp-form-fields input[type="submit"] {
+  .mc4wp-form-theme .mc4wp-form-fields input[type="submit"] {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     color: var(--footerTextColour);
@@ -1023,19 +1023,19 @@ p.homepage_book-title {
     padding-left: 30px;
     padding-right: 30px; }
     @media (max-width: 768px) {
-      .mc4wp-form-fields input[type="submit"] {
+      .mc4wp-form-theme .mc4wp-form-fields input[type="submit"] {
         padding: 15px 30px; } }
-  .mc4wp-form-fields p.terms {
+  .mc4wp-form-theme .mc4wp-form-fields p.terms {
     width: 100%;
     text-align: center; }
-    .mc4wp-form-fields p.terms label.terms {
+    .mc4wp-form-theme .mc4wp-form-fields p.terms label.terms {
       display: block;
       position: relative;
       color: var(--footerTextColour);
       font-size: 80%;
       top: auto;
       left: auto; }
-      .mc4wp-form-fields p.terms label.terms input {
+      .mc4wp-form-theme .mc4wp-form-fields p.terms label.terms input {
         margin-right: 5px; }
 
 nav ul {
