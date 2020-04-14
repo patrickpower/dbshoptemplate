@@ -1015,7 +1015,6 @@ p.homepage_book-title {
   .mc4wp-form-theme .mc4wp-form-fields input[type="submit"] {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.1);
-    color: var(--footerTextColour);
     border: none;
     outline: none;
     padding-left: 30px;
@@ -1029,7 +1028,6 @@ p.homepage_book-title {
     .mc4wp-form-theme .mc4wp-form-fields p.terms label.terms {
       display: block;
       position: relative;
-      color: var(--footerTextColour);
       font-size: 80%;
       top: auto;
       left: auto; }
