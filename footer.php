@@ -69,8 +69,8 @@
 									<?php echo rwmb_meta( 'display_title_for_blog', ['object_type' => 'setting'], 'shop_options' ) == "display_as_news" ? "News" : "Blog";?></a>
 								</li>
 								<?php endif;?>
-								<li><a href="#">Privacy policy</a></li>
-								<li><a href="#">Cookie policy</a></li>
+								<li><a href="/privacy-policy">Privacy policy</a></li>
+								<li><a href="/cookie-policy">Cookie policy</a></li>
 							</ul>
 					
 						</div>
