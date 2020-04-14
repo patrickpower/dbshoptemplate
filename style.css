@@ -834,7 +834,8 @@ header {
     max-width: 500px; }
     @media (max-width: 991px) {
       .header-logo img {
-        max-height: 40px; } }
+        max-height: 65px;
+        max-width: 260px; } }
 
 .highlight {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, yellow 50%);
