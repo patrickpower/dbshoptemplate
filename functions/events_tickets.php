@@ -10,6 +10,7 @@
 		// Ticket info text
 		$ticketText = get_post_meta(get_the_ID(),'event_ticket_text',true);
 		$ticketText = str_replace('%price%',$ticketPrice,$ticketText);
+		$ticketText = str_replace('%phone%',get_the_shop_phone(),$ticketText);
 		
 		if($isSoldOut){
 			$ticketText = "<span style='color:var(--danger)'>Tickets for this event are now sold out.</span>";
@@ -17,13 +18,13 @@
 			if($cancellationText){
 				$ticketText = "<span style='color:var(--danger)'>".$cancellationText."</span>";
 			} else {
-				$ticketText = "<span style='color:var(--danger)'>Unfortunately this event has been postponed. Please call the shop for more information</span>";
+				$ticketText = "<span style='color:var(--danger)'>Unfortunately this event has been postponed. Please call the shop on ".get_the_shop_phone()." for more information</span>";
 			}
 		}if($isCancelled){
 			if($cancellationText){
 				$ticketText = "<span style='color:var(--danger)'>".$cancellationText."</span>";
 			} else {
-				$ticketText = "<span style='color:var(--danger)'>Unfortunately this event has been cancelled. Please call the shop for more information</span>";
+				$ticketText = "<span style='color:var(--danger)'>Unfortunately this event has been cancelled. Please call the shop on ".get_the_shop_phone()." for more information</span>";
 			}
 		}
 		//External Tickets
@@ -47,7 +48,7 @@
 		 if($ticketText):?>
 			<section class="event-ticket-text row">
 				<div class="col">
-					<p><?php echo $ticketText; ?>
+					<p><?php echo $ticketText; ?></p>
 				</div>
 			</section>
 		<?php endif;

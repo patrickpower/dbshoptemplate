@@ -28,9 +28,18 @@
 							echo " – ". date('g:ia',strtotime($eventEnd));
 					}
 				if($isPostponed || $isCancelled){ echo "</del>";}?>
-					
 				</p>
 				<?php do_action('after_event_date');?>
 			</div>
 		</section>
 	<?php }
+
+	add_action('after_event_date','is_old_event');
+	function is_old_event(){
+		$eventDate = get_post_meta(get_the_ID(),'event_date',true);
+		$todaysDate = date('Y-m-d');
+		if($eventDate < $todaysDate){
+			remove_action('add_event_ticket_info','event_tickets');
+			echo "<p class='event-date'>This event has now passed</p>";
+		}
+	}

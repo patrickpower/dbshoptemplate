@@ -4,8 +4,12 @@
 			<div class="row">
 				<div class="col-12 footer-logo">
 					<a href="/">
-						<img src="<?php images();?>/logo.png" width="250">
-					</a>
+				<img src="<?php echo get_shop_footer_logo();?>"
+					 alt="<?php echo get_the_shop_name();?>"
+					 title="<?php echo get_the_shop_name();?>"
+					 width="150"
+					 >
+				</a>
 				</div>
 			</div>
 			<div class="row">
@@ -13,11 +17,19 @@
 					<div class="row">
 						<div class="col-12 footer-address">
 							<address>
-								123 Main Street,<br>
-								Smalltown<br>
-								East Shire A34 10R
+								<?php echo rwmb_meta( 'shop_address_line_1', ['object_type' => 'setting'], 'shop_options' )."<br>";
+									  if(rwmb_meta( 'shop_address_line_2', ['object_type' => 'setting'], 'shop_options' )){
+										 echo rwmb_meta( 'shop_address_line_2', ['object_type' => 'setting'], 'shop_options' )."<br>";
+									  }
+									  if(rwmb_meta( 'shop_address_line_3', ['object_type' => 'setting'], 'shop_options' )){
+										 echo rwmb_meta( 'shop_address_line_3', ['object_type' => 'setting'], 'shop_options' );
+									  }
+									  if(rwmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' )){
+										 echo "&nbsp;". rwmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' );
+									  }	
+								?>
 							</address>
-							<p aria-label="telephone">01234 299388</p>
+							<p aria-label="telephone"><?php echo get_the_shop_phone();?></p>
 						</div>
 					</div>
 					
@@ -25,28 +37,38 @@
 				</section>
 				<section class="col-sm-6">
 					<div class="row">
-						<div class="col-md-4">
+						<div class="col-6 col-md-4">
 							<ul>
 								<li><a href="/">Home</a></li>
-								<li><a href="#">Contact us</a></li>
-								<li><a href="#">Find us</a></li>
-								<li><a href="#">Opening hours</a></li>
+								<li><a href="/contact">Contact us</a></li>
+								<li><a href="/contact#find-us">Find us</a></li>
+								<li><a href="/contact#opening-hours">Opening hours</a></li>
+							</ul>
+					
+						</div>
+						<div class="col-6 col-md-4">
+							<ul>
+								<?php
+									$args = array(
+										'taxonomy'=>'book_category',
+										'number' => 4,
+										'hide_empty'=>true
+									);
+									$bookCats = get_terms($args);
+									foreach ($bookCats as $cat){?>
+								<li><a href="<?php echo get_term_link($cat->term_id);?>"><?php echo ucwords($cat->name);?></a></li>		
+								<?php }?>
 							</ul>
 					
 						</div>
 						<div class="col-md-4">
 							<ul>
-								<li><a href="#">Order a book</a></li>
-								<li><a href="#">New books</a></li>
-								<li><a href="#">Staff picks</a></li>
-								<li><a href="#">Local interest</a></li>
-							</ul>
-					
-						</div>
-						<div class="col-md-4">
-							<ul>
-								<li><a href="#">Events</a></li>
-								<li><a href="#">News</a></li>
+								<li><a href="/events">Events</a></li>
+								<?php if( rwmb_meta('enable_blog_on_website',['object_type' => 'setting'], 'shop_options' ) == "1"):?>
+								<li><a href="/category/news">
+									<?php echo rwmb_meta( 'display_title_for_blog', ['object_type' => 'setting'], 'shop_options' ) == "display_as_news" ? "News" : "Blog";?></a>
+								</li>
+								<?php endif;?>
 								<li><a href="#">Privacy policy</a></li>
 								<li><a href="#">Cookie policy</a></li>
 							</ul>
@@ -60,7 +82,7 @@
 			<div class="footer-end_inner container">
 				<div class="row">
 					<div class="col">
-						<p class="text-center">&copy; Bookshop <?php echo date('Y');?></p>
+						<p class="text-center">&copy; <?php echo get_the_shop_name()." ". date('Y');?></p>
 					</div>
 				</div>
 			</div>

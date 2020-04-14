@@ -37,7 +37,7 @@
 			),
 			array(
 				'id' => $prefix . 'image_display_option',
-				'name' => esc_html__( 'Image display options', 'metabox-online-generator' ),
+				'name' => esc_html__( 'All Events page image display options', 'metabox-online-generator' ),
 				'type' => 'select',
 				'desc' => esc_html__( 'How you want to show your images on the “Events” page', 'metabox-online-generator' ),
 				'placeholder' => esc_html__( 'Please choose', 'metabox-online-generator' ),

@@ -2,119 +2,49 @@
 
 <section class="section-title_container row">
 	<div class="col text-center">
-		<h1>Welcome to the Bookshop</h1>
+		<h1>Welcome to <?php echo get_the_shop_name(true);?></h1>
 	</div>
 </section>
+
+<?php do_action('after_homepage_title');?>
 
 <section class="homepage_banner-image row">
 	<div class="col">
-		<picture>
-			<img src="<?php images();?>/homepage_banner.jpg"
-				 alt="the Bookshop">
+		<?php $path = rwmb_meta( 'homepage_banner', ['object_type' => 'setting'], 'shop_options' );
+		
+	foreach ($path as $image){
+		$id = $image['ID'];
+		$imageSrc = wp_get_attachment_image_src($id,'full')[0];
+		$mobPath = rwmb_meta( 'homepage_banner_mobile', ['object_type' => 'setting'], 'shop_options' );
+		foreach ($mobPath as $mobImage){
+			$mobID = $mobImage['ID'];
+			$mobImageSrc = wp_get_attachment_image_src($mobID,'full')[0];
+		}?>
+			
+	<picture>
+			<?php if($mobPath):?>
+			<source srcset="<?php echo $mobImageSrc;?>" media="(max-width:767px)">
+			<?php endif;?>
+			<img src="<?php echo $imageSrc;?>"
+				 alt="<?php echo get_the_shop_name();?>">
 		</picture>
 		
+		<?php } ?>
 	</div>
 </section>
 
-<section class="section-title_container row">
-	<div class="col text-center">
-		<h1>Events</h1>
-	</div>
-</section>
-<section class="homepage_events row">	
-	
-	<article class="homepage_single-event col-6 col-md-3" role="link">
-		<h2>Nikita Lalwani</h2>
-		<h3>You People</h3>
-		<p>Tuesday 3rd July at 6.30pm</p>
-	</article>
-	<article class="homepage_single-event col-6 col-md-3" role="link">
-		<h2>Nikita Lalwani</h2>
-		<h3>You People</h3>
-		<p>Tuesday 3rd July at 6.30pm</p>
-	</article>
-	<article class="homepage_single-event col-6 col-md-3" role="link">
-		<h2>Nikita Lalwani</h2>
-		<h3>You People</h3>
-		<p>Tuesday 3rd July at 6.30pm</p>
-	</article>
-	<article class="homepage_single-event col-6 col-md-3" role="link">
-		<h2>Nikita Lalwani</h2>
-		<h3>You People</h3>
-		<p>Tuesday 3rd July at 6.30pm</p>
-	</article>
-	
-<!--	<p class="no-events_notice">We currently have no events lined up. Please sign up to our mailing list to be notified when we announce events.</p>-->
-	
-	
-</section>
+<?php do_action('homepage_events');
+		/* Also hook in to after_homepage_events */
+
+	do_action('homepage_newsletter');
+?>
 
 
-<section class="section-title_container row">
-	<div class="col text-center">
-		<h1>New Books</h1>
-	</div>
-</section>
-<section class="homepage_books-row row">
-	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book" role="link" data-href="#">
-			
-			<img src="<?php images();?>/dev-images/jacket_1.jpg"
-				 alt="Book Title by Book Author | 97811223123">
-			<div>
-				<p class="homepage_book-title">Crusaders</p>
-				<p class="homepage_book-author">Dan Jones</p>
-				<p class="homepage_book-price">£9.99</p>
-			</div>
-	</article>
-	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book">
-			<img src="<?php images();?>/dev-images/jacket_2.jpg"
-				 alt="Book Title by Book Author | 97811223123">
-			<div>
-				<p class="homepage_book-title">Crusaders</p>
-				<p class="homepage_book-author">Dan Jones</p>
-				<p class="homepage_book-price">£9.99</p>
-			</div>
-	</article>
-	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book">
-			<img src="<?php images();?>/dev-images/jacket_3.jpg"
-				 alt="Book Title by Book Author | 97811223123">
-			<div>
-				<p class="homepage_book-title">Crusaders</p>
-				<p class="homepage_book-author">Dan Jones</p>
-				<p class="homepage_book-price">£9.99</p>
-			</div>
-	</article>
-	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book">
-			<img src="<?php images();?>/dev-images/jacket_4.jpg"
-				 alt="Book Title by Book Author | 97811223123">
-			<div>
-				<p class="homepage_book-title">Crusaders</p>
-				<p class="homepage_book-author">Dan Jones</p>
-				<p class="homepage_book-price">£9.99</p>
-			</div>
-	</article>
-	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book">
-			<img src="<?php images();?>/dev-images/jacket_5.jpg"
-				 alt="Book Title by Book Author | 97811223123">
-			<div>
-				<p class="homepage_book-title">Crusaders</p>
-				<p class="homepage_book-author">Dan Jones</p>
-				<p class="homepage_book-price">£9.99</p>
-			</div>
-	</article>
-	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book">
-			<img src="<?php images();?>/dev-images/jacket_6.jpg"
-				 alt="Book Title by Book Author | 97811223123">
-			<div>
-				<p class="homepage_book-title">Crusaders</p>
-				<p class="homepage_book-author">Dan Jones</p>
-				<p class="homepage_book-price">£9.99</p>
-			</div>
-	</article>
-	
-</section>
 
+<?php do_action('homepage_books');
+?>
 
+<?php if(is_plugin_active('instagram-feed/instagram-feed.php')){?>
 <section class="section-title_container row">
 	<div class="col text-center">
 		<h1>Instagram</h1>
@@ -126,7 +56,7 @@
 		<?php echo do_shortcode('[instagram-feed]');?>
 	</div>
 </section>
-
+<?php }?>
 
 
 <section class="section-title_container row">
@@ -135,22 +65,30 @@
 	</div>
 </section>
 <section class="homepage_find-us row">
-	<div class="col-sm-8">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4454.599274619627!2d-0.7778964151434561!3d51.56963372458295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487689c17bc6d5c5%3A0xba5d25b8732d9e32!2sThe%20Marlow%20Bookshop!5e0!3m2!1sen!2suk!4v1585245240851!5m2!1sen!2suk" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	<div class="col-md-8 google-maps">
+		<?php echo rwmb_meta( 'google_maps', ['object_type' => 'setting'], 'shop_options' );?>
 	</div>
-	<div class="col-sm-4">
-		<h5>Bookshop name</h5>
+	<div class="col-md-4">
+		<h5><?php echo get_the_shop_name()?></h5>
 		<address>
-			123 Main Street,<br>
-			Smalltown<br>
-			East Shire A34 10R
+			<?php echo rwmb_meta( 'shop_address_line_1', ['object_type' => 'setting'], 'shop_options' )."<br>";
+				  if(rwmb_meta( 'shop_address_line_2', ['object_type' => 'setting'], 'shop_options' )){
+					 echo rwmb_meta( 'shop_address_line_2', ['object_type' => 'setting'], 'shop_options' )."<br>";
+				  }
+				  if(rwmb_meta( 'shop_address_line_3', ['object_type' => 'setting'], 'shop_options' )){
+					 echo rwmb_meta( 'shop_address_line_3', ['object_type' => 'setting'], 'shop_options' );
+				  }
+				  if(rwmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' )){
+					 echo "&nbsp;". rwmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' );
+				  }	
+			?>
 		</address>
 		<h6>Opening times</h6>
 		<p>
-			Monday – Friday 9:00 - 18:00<br>
-			Saturday 9:00 - 18:00<br>
-			Sunday 9:00 - 18:00<br>
-			Bank holidays 09:00 - 18:00
+			Monday – Friday <?php echo rwmb_meta( 'mon_fri_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'mon_fri_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
+			Saturday <?php echo rwmb_meta( 'sat_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'sat_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
+			Sunday <?php echo rwmb_meta( 'sun_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'sun_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
+			Bank holidays <?php echo rwmb_meta( 'hols_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'hols_closing', ['object_type' => 'setting'], 'shop_options' );?>
 			</p>
 	</div>
 </section>

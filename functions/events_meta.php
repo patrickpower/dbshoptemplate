@@ -43,6 +43,11 @@
 				'id' => $prefix . 'event_date',
 				'type' => 'date',
 				'name' => esc_html__( 'Event date', 'metabox-online-generator' ),
+				'admin_columns'=> array(
+					'position' => 'before date',
+					'sort'=>true
+				)
+				
 			),
 			array(
 				'id' => $prefix . 'event_start_time',
