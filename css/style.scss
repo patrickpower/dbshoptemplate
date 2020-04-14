@@ -542,7 +542,6 @@ p.homepage_book-title {
 	& input[type="submit"]{
 		height:100%;
 		background-color:rgba(0,0,0,0.1);
-		color:var(--footerTextColour);
 		border:none;
 		outline:none;
 		padding-left:30px;
@@ -552,16 +551,17 @@ p.homepage_book-title {
 		}
 	}
 	
+	
 	& p.terms {
 		width:100%;
 		text-align:center;
 		& label.terms {
 			display:block;
 			position:relative;
-			color:var(--footerTextColour);
 			font-size:80%;
 			top:auto;
 			left:auto;
+			
 			& input {
 				margin-right:5px;
 			}
