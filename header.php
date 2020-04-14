@@ -84,7 +84,6 @@
 </head>
     
 <body>
-	<!-- Hart's -->
 	<header class="container">
 		<div id="menu-button"><i class="fa fa-bars"></i></div>
 		<section class="header-logo_container row">
