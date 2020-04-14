@@ -537,6 +537,9 @@ p.homepage_book-title {
 	& p {
 		display: inline-block;
     	position: relative;
+		@include phone {
+			width:100%;
+		}
 	}
 	& label {
 		position: absolute;
@@ -565,6 +568,8 @@ p.homepage_book-title {
 		padding-right:30px;
 		@include phone {
 			padding:15px 30px;
+			display:block;
+			margin:0 auto;
 		}
 	}
 	

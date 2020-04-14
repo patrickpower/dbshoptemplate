@@ -1026,6 +1026,9 @@ p.homepage_book-title {
   .mc4wp-form-theme .mc4wp-form-fields p {
     display: inline-block;
     position: relative; }
+    @media (max-width: 768px) {
+      .mc4wp-form-theme .mc4wp-form-fields p {
+        width: 100%; } }
   .mc4wp-form-theme .mc4wp-form-fields label {
     position: absolute;
     top: 5px;
@@ -1051,7 +1054,9 @@ p.homepage_book-title {
     padding-right: 30px; }
     @media (max-width: 768px) {
       .mc4wp-form-theme .mc4wp-form-fields input[type="submit"] {
-        padding: 15px 30px; } }
+        padding: 15px 30px;
+        display: block;
+        margin: 0 auto; } }
   .mc4wp-form-theme .mc4wp-form-fields p.terms {
     width: 100%;
     text-align: center; }
