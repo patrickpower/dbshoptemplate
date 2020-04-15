@@ -83,7 +83,7 @@
 	<div class="col-sm-8">
 		<?php if(is_plugin_active('instagram-feed/instagram-feed.php')){;?>
 			<a class="no-dec" href="<?php echo $ig;?>"><h4>Instagram</h4></a>
-			<?php echo do_shortcode('[instagram-feed num=6 cols=3 showfollow=false]')?>
+			<?php echo do_shortcode('[instagram-feed num=6 cols=3 showfollow=false showheader=false showbutton=false]')?>
 		<?php }?>
 		
 	</div>

@@ -19,8 +19,8 @@
 			<?php $args = array(
 					'post_type'=>'book',
 					'posts_per_page'=>6,
-					'orderby'=>'RAND',
-					'order'=>'ASC',
+//					'orderby'=>'RAND',
+					'order'=>'DESC',
 					'tax_query'=>array(
 						array(
 							'taxonomy'=>'book_category',

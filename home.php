@@ -35,13 +35,13 @@
 
 <?php do_action('homepage_events');
 		/* Also hook in to after_homepage_events */
-
-	do_action('homepage_newsletter');
+	
 ?>
 
 
 
 <?php do_action('homepage_books');
+do_action('homepage_newsletter');
 ?>
 
 <?php if(is_plugin_active('instagram-feed/instagram-feed.php')){?>

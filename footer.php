@@ -70,7 +70,7 @@
 								</li>
 								<?php endif;?>
 								<li><a href="/privacy-policy">Privacy policy</a></li>
-								<li><a href="/cookie-policy">Cookie policy</a></li>
+<!--								<li><a href="/cookie-policy">Cookie policy</a></li>-->
 							</ul>
 					
 						</div>
