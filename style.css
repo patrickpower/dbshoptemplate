@@ -975,6 +975,9 @@ p.homepage_book-title {
   padding: 15px 30px 0;
   text-align: center;
   margin: 30px 0 0; }
+  @media (max-width: 991px) {
+    .homepage_notice {
+      margin-bottom: 30px; } }
 
 .homepage_single-event {
   padding-left: 60px;
@@ -1083,12 +1086,7 @@ nav ul {
   -moz-justify-content: space-around;
   -ms-justify-content: space-around;
   justify-content: space-around;
-  -ms-flex-pack: space-around;
-  -webkit-justify-content: space-evenly;
-  -moz-justify-content: space-evenly;
-  -ms-justify-content: space-evenly;
-  justify-content: space-evenly;
-  -ms-flex-pack: space-evenly; }
+  -ms-flex-pack: space-around; }
   @media (min-width: 992px) {
     nav ul {
       width: 90%; } }
@@ -1196,7 +1194,7 @@ section.page-body {
   @media (max-width: 991px) {
     #page-wrap {
       padding-top: 60px; } }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     #page-wrap.homepage {
       display: -webkit-box;
       display: -moz-box;

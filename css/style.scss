@@ -489,6 +489,9 @@ p.homepage_book-title {
 	padding:15px 30px 0;
 	text-align:center;
 	margin:30px 0 0;
+	@include device {
+		margin-bottom:30px;
+	}
 }
 
 .homepage_single-event {
@@ -598,7 +601,6 @@ nav ul {
 	margin:0 auto;
 	@include display_flex();
 	@include justify-content(space-around);
-	@include justify-content(space-evenly);
 	@include desktop {
 		width:90%;
 	}
@@ -737,7 +739,7 @@ section.page-body {
 	@include device {
 		padding-top:60px;
 	}
-	@include phone {
+	@include device {
 		&.homepage {
 			@include display_flex();
 			@include flex-direction(column);
