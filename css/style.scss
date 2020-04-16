@@ -532,7 +532,7 @@ p.homepage_book-title {
 	line-height:2;
 }
 
-.mc4wp-form-theme .mc4wp-form-fields {
+form[class^="mc4wp-form"] .mc4wp-form-fields {
 	@include display_flex();
 	margin-top:30px;
 	@include flex-wrap(wrap);
