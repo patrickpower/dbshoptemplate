@@ -1265,6 +1265,11 @@ section.page-body {
         padding-left: 0;
         padding-top: 15px; } }
 
+.reservations_notice {
+  border: 2px solid red;
+  padding: 5px;
+  margin-bottom: 15px; }
+
 #reserve_a_book {
   cursor: pointer; }
 
