@@ -38,7 +38,7 @@
 		<section class="page-body row">
 			<div class="col">
 				<?php if(rwmb_meta( 'enable_book_reservations', ['object_type' => 'setting'], 'shop_options' ) !== 1 && rwmb_meta( 'enable_book_reservation_message', ['object_type' => 'setting'], 'shop_options' ) !== ""){ ?>
-				<p class="reservations_notice"><?php echo rwmb_meta( 'enable_book_reservation_message', ['object_type' => 'setting'], 'shop_options' );?></p>
+				<div class="reservations_notice"><?php echo rwmb_meta( 'enable_book_reservation_message', ['object_type' => 'setting'], 'shop_options' );?></div>
 				<?php }?>
 				<?php the_content();?>
 			</div>
