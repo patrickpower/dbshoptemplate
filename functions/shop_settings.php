@@ -322,6 +322,12 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 					'type' => 'checkbox',
 					'std'=> true
 				),
+				array(
+					'id' => 'enable_book_reservation_message',
+					'name' => esc_html__( 'If book reservations are NOT allowed, add an optional message here', 'metabox-online-generator' ),
+					'type' => 'checkbox',
+					'std'=> true
+				),
 		)
 	);
 	$meta_boxes[] = array(
