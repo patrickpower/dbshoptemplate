@@ -764,7 +764,7 @@ p.event-date {
   margin-bottom: 30px; }
 
 footer {
-  height: var(--footerHeight);
+  min-height: var(--footerHeight);
   margin-top: calc(var(--footerHeight) * -1);
   background-color: #f3f3f3;
   background-color: var(--footerBackgroundColour);
