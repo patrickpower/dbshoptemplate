@@ -30,6 +30,7 @@
 								?>
 							</address>
 							<p aria-label="telephone"><?php echo get_the_shop_phone();?></p>
+							<p><small>&copy; <?php echo get_the_shop_name()." ". date('Y');?></small></p>
 						</div>
 					</div>
 					
@@ -82,7 +83,7 @@
 			<div class="footer-end_inner container">
 				<div class="row">
 					<div class="col">
-						<p class="text-center">&copy; <?php echo get_the_shop_name()." ". date('Y');?></p>
+						<p class="text-center"><small><a href="https://patrickpower.design" target="_blank"><u>Website design</u></a> by patrickpower.design</small></p>
 					</div>
 				</div>
 			</div>

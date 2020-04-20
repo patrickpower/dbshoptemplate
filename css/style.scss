@@ -1,6 +1,6 @@
 /*
 Theme Name: Patrick Power Design
-URI:  patrickpower.design
+URI:  https://github.com/patrickpower/dbshoptemplate
 Author: Patrick Power
 Author URI: https://patrickpower.design
 Version: 1
@@ -58,6 +58,7 @@ html, body {
 body {
 	border-top:6px solid black;
 	border-top:6px solid var(--trimColour,black);
+	overflow-x: hidden;
 	@include device {
 		width:100vw;
 		overflow-x: hidden!important;
