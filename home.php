@@ -86,9 +86,13 @@ do_action('homepage_newsletter');
 		<h6>Opening times</h6>
 		<p>
 			Monday – Friday <?php echo rwmb_meta( 'mon_fri_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'mon_fri_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
-			Saturday <?php echo rwmb_meta( 'sat_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'sat_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
+			Saturday – <?php echo rwmb_meta( 'sat_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'sat_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
+			<?php if(rwmb_meta( 'sun_closing', ['object_type' => 'setting'], 'shop_options' )){?>
 			Sunday <?php echo rwmb_meta( 'sun_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'sun_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
-			Bank holidays <?php echo rwmb_meta( 'hols_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'hols_closing', ['object_type' => 'setting'], 'shop_options' );?>
+			<?php } else {?>
+			Sunday – Closed
+			<?php }?>
+			Bank holidays – <?php echo rwmb_meta( 'hols_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'hols_closing', ['object_type' => 'setting'], 'shop_options' );?>
 			</p>
 	</div>
 </section>
