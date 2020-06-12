@@ -90,7 +90,7 @@ do_action('homepage_newsletter');
 			<?php if(rwmb_meta( 'sun_closing', ['object_type' => 'setting'], 'shop_options' )){?>
 			Sunday <?php echo rwmb_meta( 'sun_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'sun_closing', ['object_type' => 'setting'], 'shop_options' );?><br>
 			<?php } else {?>
-			Sunday – Closed
+			Sunday – Closed<br>
 			<?php }?>
 			Bank holidays – <?php echo rwmb_meta( 'hols_opening', ['object_type' => 'setting'], 'shop_options' );?> - <?php echo rwmb_meta( 'hols_closing', ['object_type' => 'setting'], 'shop_options' );?>
 			</p>
