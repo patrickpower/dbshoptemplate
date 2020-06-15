@@ -79,7 +79,7 @@ do_action('homepage_newsletter');
 					 echo rwmb_meta( 'shop_address_line_3', ['object_type' => 'setting'], 'shop_options' )."&nbsp;";
 				  }
 				  if(rwmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' )){
-					 echo wmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' );
+					 echo rwmb_meta( 'shop_postcode', ['object_type' => 'setting'], 'shop_options' );
 				  }	
 			?>
 		</address>
