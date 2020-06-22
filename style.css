@@ -598,6 +598,17 @@ a.anchor {
   justify-content: center;
   -ms-flex-pack: center;
   padding-top: 45px; }
+  @media (max-width: 991px) {
+    .archive-categories_inner {
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -ms-flex-align: center;
+      align-items: center; } }
   .archive-categories_inner a {
     display: -webkit-box;
     display: -moz-box;

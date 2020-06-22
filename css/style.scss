@@ -99,6 +99,10 @@ a.anchor {
 	@include display_flex();
 	@include justify-content(center);
 	padding-top:45px;
+	@include device {
+		@include flex-direction(column);
+		@include align-items(center);
+	}
 	& a {
 		@include display_flex();
 		@include order(0);
