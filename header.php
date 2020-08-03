@@ -114,11 +114,13 @@
 				<li>
 					<a href="<?php echo get_term_link($link);?>">Books</a>
 				</li>
-				<?php }?>
+				<?php }
+				$iseventsPagePublished = get_post_status(get_page_by_title('Events')); if($isEventsPagePublished == "publish"){?>
 				<li>
-					<a href="/events">Events</a>
+					<a href="/about">Events</a>
 				</li>
-				<?php if( rwmb_meta('enable_blog_on_website',['object_type' => 'setting'], 'shop_options' ) == "1"):?>
+				<?php }
+				if( rwmb_meta('enable_blog_on_website',['object_type' => 'setting'], 'shop_options' ) == "1"):?>
 					<li><a href="/category/news">
 						<?php echo rwmb_meta( 'display_title_for_blog', ['object_type' => 'setting'], 'shop_options' ) == "display_as_news" ? "News" : "Blog";?></a>
 					</li>
