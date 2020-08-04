@@ -36,7 +36,7 @@
 <section class="archive_books-container row">
 		<?php while(have_posts()){
 			the_post();?>
-	<article class="col-6 col-sm-4 col-md-2 homepage_book archive" role="link" data-href="<?php echo get_permalink();?>">
+	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book archive" role="link" data-href="<?php echo get_permalink();?>">
 			<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full');?>"
 				 alt="<?php echo get_the_title(get_the_ID());?> by <?php echo get_post_meta(get_the_ID(),'book_author',true);?> | <?php echo get_post_meta(get_the_ID(),'book_isbn',true);?>">
 			<div>

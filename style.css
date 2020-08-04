@@ -588,6 +588,9 @@ a.anchor {
 
 .archive-categories_inner {
   padding-top: 45px; }
+  @media (min-width: 769px) {
+    .archive-categories_inner {
+      column-count: 2; } }
   @media (min-width: 992px) {
     .archive-categories_inner {
       column-count: 3; } }

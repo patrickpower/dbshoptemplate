@@ -98,6 +98,9 @@ a.anchor {
 .archive-categories_inner {
 
 	padding-top:45px;
+	@include phone-up {
+		column-count:2;
+	}
 	@include desktop {
 		column-count: 3;
 	}
