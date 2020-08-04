@@ -34,7 +34,7 @@
 						<label for="terms_agree">I agree for <?php echo get_the_shop_name(true);?> to use my email address and name for the purposes of this order. You can read our full privacy policy <a href="#">here</a>.
 					</p>
 					<p class="submit">
-						<input class="highlight" type="submit" name="submit">
+						<input class="highlight" type="submit" name="submit" value="Submit">
 					</p>
 					
 				</form>
