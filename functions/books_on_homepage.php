@@ -31,7 +31,7 @@
 				);
 			$homepageBooks = get_posts($args);
 			foreach ($homepageBooks as $book) {?>
-				<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book" role="link" data-href="<?php echo get_permalink($book->ID);?>">
+				<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book on_homepage" role="link" data-href="<?php echo get_permalink($book->ID);?>">
 
 						<img src="<?php echo get_the_post_thumbnail_url($book->ID,'full');?>"
 							 alt="<?php echo get_the_title($book->ID);?> by <?php echo get_post_meta($book->ID,'book_author',true);?> | <?php echo get_post_meta($book->ID,'book_isbn',true);?>">

@@ -102,8 +102,7 @@ a.anchor {
 		column-count: 3;
 	}
 	& a {
-		@include display_flex();
-		@include order(0);
+		display:block;
 		&.selected {
 			@include order(-1);
 		}
@@ -111,7 +110,7 @@ a.anchor {
 }
 
 .archive-terms {
-	display: block;
+	display: inline-block;
 	margin:5px 15px;
 	font-size:125%;
 	&:hover {
@@ -413,7 +412,7 @@ header {
 	@include xs {
 		margin-bottom:60px;
 	}
-	&:nth-of-type(4){
+	&.on_homepage:nth-of-type(4){
 		@include xs-up {
 			display:none;
 		}
@@ -421,7 +420,7 @@ header {
 			@include display_flex();
 		}
 	}
-	&:nth-of-type(5), &:nth-of-type(6){
+	&.on_homepage:nth-of-type(5), &.on_homepage:nth-of-type(6){
 		display:none;
 		@include desktop {
 			@include display_flex();
