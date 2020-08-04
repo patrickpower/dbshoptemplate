@@ -118,7 +118,7 @@ function get_shop_footer_logo(){
 	}
 }
 
-add_action('pre_get_posts', 'filter_press_tax');
+add_action('woocommerce_product_query', 'filter_press_tax');
 
     function filter_press_tax( $query ){
         if( $query->is_tax('book_category') && $query->has_term('book_category')):
