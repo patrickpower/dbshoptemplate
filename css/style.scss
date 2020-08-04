@@ -96,12 +96,10 @@ a.anchor {
 }
 
 .archive-categories_inner {
-	@include display_flex();
-	@include justify-content(center);
+
 	padding-top:45px;
-	@include device {
-		@include flex-direction(column);
-		@include align-items(center);
+	@include desktop {
+		column-count: 3;
 	}
 	& a {
 		@include display_flex();
