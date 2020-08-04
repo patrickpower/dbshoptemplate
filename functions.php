@@ -122,7 +122,6 @@ add_action('pre_get_posts', 'filter_press_tax');
 
     function filter_press_tax( $query ){
 		if(is_tax('book_category')){
-			echo "Rece";
 			$query->set('posts_per_page',-1);
 		}
     }
