@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<!-- Patrick Power Design, patrickpower.design -->
 <head>
 	<?php global $post;
         setup_postdata( $post );?>
@@ -19,8 +19,7 @@
 		<?php } }
 	?>
 	
-	<title>
-    <?php 
+	<title><?php 
         
         if (is_home()) { 
                 echo get_the_shop_name();
@@ -54,9 +53,7 @@
         
 
         wp_reset_postdata();
-        ?>
-    
-    </title>
+        ?></title>
     <!--[if lt IE 9]>
 	   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
