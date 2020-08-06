@@ -90,6 +90,7 @@ function send_order_to_shop(){
 	
 }
 
+
 add_action('after_reserve_button','thanks_for_order');
 function thanks_for_order(){
 	

@@ -38,9 +38,6 @@ function enqueues() //Enqueue the CSS & jQuery files...
 }
 add_action( 'wp_enqueue_scripts', 'enqueues' ); // PRESS PLAY ON THE ABOVE
 
-
-
-
 get_template_part('functions/create_default_pages');
 get_template_part('functions/create_books');
 get_template_part('functions/create_events');

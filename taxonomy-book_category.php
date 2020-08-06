@@ -7,7 +7,6 @@
 			<h1>BOOKS</h1>
 		</div>
 	</section>
-
 	<section class="archive-categories row">
 		<div class="col archive-categories_inner">
 			<?php $args = array(
