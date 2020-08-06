@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="<?php echo rwmb_meta( 'trim_colour', ['object_type' => 'setting'], 'shop_options' );?>">
-	<meta name="description" content="<?php echo get_the_shop_name().' - new books, fiction, non-fiction, history, biography and children’s books. Reserve books online and collect in store.';?>">
+	<meta name="description" content="<?php echo get_the_shop_name().' - New releases, fiction, non-fiction, history, biography and children’s books. Reserve books online and collect in store.'.get_bloginfo('description');?>">
 	<?php $favicon = rwmb_meta( 'favicon', ['object_type' => 'setting'], 'shop_options' );
 		if($favicon){
 		foreach ($favicon as $image){
