@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <!-- Patrick Power Design, patrickpower.design -->
+	
 <head>
 	<?php global $post;
         setup_postdata( $post );?>
