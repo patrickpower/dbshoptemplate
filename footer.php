@@ -40,25 +40,17 @@
 					<div class="row">
 						<div class="col-6 col-md-4">
 							<ul>
+								<?php $args = array('taxonomy'=>'book_category');
+								  $bookCats = get_terms($args);
+								  if(count($bookCats > 0)){
+								 $linkToBooks = rwmb_meta( 'link_to_this_book_cat', ['object_type' => 'setting'], 'shop_options' );
+									if(isset($linkToBooks)){ $link = $linkToBooks;} else{  $link = $bookCats[0]->term_id;}
+								?>
 								<li><a href="/">Home</a></li>
+								<li><a href="<?php echo $link;?>">Books</a></li>
 								<li><a href="/contact">Contact us</a></li>
 								<li><a href="/contact#find-us">Find us</a></li>
 								<li><a href="/contact#opening-hours">Opening hours</a></li>
-							</ul>
-					
-						</div>
-						<div class="col-6 col-md-4">
-							<ul>
-								<?php
-									$args = array(
-										'taxonomy'=>'book_category',
-										'number' => 4,
-										'hide_empty'=>true
-									);
-									$bookCats = get_terms($args);
-									foreach ($bookCats as $cat){?>
-								<li><a href="<?php echo get_term_link($cat->term_id);?>"><?php echo ucwords($cat->name);?></a></li>		
-								<?php }?>
 							</ul>
 					
 						</div>
