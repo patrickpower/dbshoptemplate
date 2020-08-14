@@ -42,7 +42,9 @@
 						</div>
 				</article>
 			<?php } ?>
-
+			<div class="col-12 d-flex justify-content-center pt-4">
+				<a href="<?php echo get_term_link($id);?>" class="btn btn-primary">See all...</a>      
+			</div>
 		</section>
 
 		<?php } }

@@ -159,6 +159,13 @@ p.book_meta {
 	font-size:1.6rem;
 }
 
+.btn-primary {
+	background-color:var(--trimColour, #28a745);
+	border-color:var(--trimColour, #28a745);
+	padding:.375rem 1.5rem;
+	border-radius:0;
+}
+
 article.contact-page {
 	padding-top:45px;
 }
