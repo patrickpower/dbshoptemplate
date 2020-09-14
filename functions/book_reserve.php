@@ -26,8 +26,8 @@
 						<input type="email" name="reserve_email" required>
 					</p>
 					<p>
-						<label for="order_notes">Order notes"></label>
-						<textarea style="width:100%" name="order_notes" rows="2"></textarea>
+						<label for="order_notes">Order notes (optional)</label>
+						<textarea style="width:100%" name="order_notes" rows="2" class="pt-3"></textarea>
 					</p>
 					<p class="quantity">
 						<label for="reserve_qty">Quantity</label>
@@ -60,6 +60,7 @@ function send_conf_to_customer(){
 	$book_title = $_GET['book_title'];
 	$book_author = $_GET['book_author'];
 	$book_price = $_GET['book_price'];
+	$order_notes = $_POST['order_notes'];
 	$book_qty = $_GET['reserve_qty'];
 	$headers = array('Content-Type: text/html; charset=UTF-8','From: '.get_the_shop_name().' <'.get_the_shop_email().'>');
 	$to = $customer_email;
@@ -69,6 +70,8 @@ function send_conf_to_customer(){
 	$message .= "Order reference: ".$customer_reservation_reference."<br>";
 	$message .= $book_qty." &times; <em>".$book_title."</em> by ".$book_author.", ".$book_price;
 	$book_qty > 1 ? $message .= " each" : "";
+	if($order_notes){ $message .= "<br><br>Notes:<br>".$order_notes;
+		}
 	$message .= ".<br><br>Many thanks,<br><br><strong>".get_the_shop_name()."</strong><br>".get_the_shop_phone();
 	wp_mail($to,$subject,$message,$headers);
 	do_action('send_shop_email');
@@ -80,6 +83,7 @@ function send_order_to_shop(){
 	$shop_email_customer_email = $_GET['reserve_email'];
 	$shop_email_book_title = $_GET['book_title'];
 	$shop_email_book_author = $_GET['book_author'];
+	$shop_email_order_notes = $_GET['order_notes'];
 	$shop_email_book_price = $_GET['book_price'];
 	$shop_email_customer_reservation_reference = "#".date('dmygi').$_GET['book_id'];
 	$shop_email_book_qty = $_GET['reserve_qty'];
@@ -90,6 +94,8 @@ function send_order_to_shop(){
 	$shop_email_message .= "<strong>Order details:</strong><br>Order reference: ".$shop_email_customer_reservation_reference."<br>Customer name: ".$shop_email_customer_name."<br>Customer email: ".$shop_email_customer_email."<br>Ordered ".date('jS F Y \a\t g:ia')."<br><br>";
 	$shop_email_message .= $shop_email_book_qty." &times; <em>".$shop_email_book_title."</em> by ".$shop_email_book_author.", ".$shop_email_book_price;
 	$shop_email_book_qty > 1 ? $shop_email_message .= " each" : "";
+	if($shop_email_order_notes){ $shop_email_message .= "<br><br>Notes:<br>".$shop_email_order_notes;
+		}
 	wp_mail($shop_email_to,$shop_email_subject,$shop_email_message,$shop_email_headers);
 	
 }
