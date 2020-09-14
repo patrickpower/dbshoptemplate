@@ -25,6 +25,10 @@
 						<label for="reserve_email">Your email</label>
 						<input type="email" name="reserve_email" required>
 					</p>
+					<p>
+						<label for="order_notes">Order notes"></label>
+						<textarea style="width:100%" name="order_notes" rows="2"></textarea>
+					</p>
 					<p class="quantity">
 						<label for="reserve_qty">Quantity</label>
 						<input type="number" name="reserve_qty" value="1">
