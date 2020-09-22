@@ -25,9 +25,10 @@
 											
 				############################
 				/* Reserve button hook */
+				echo"<!-- BB -->";
 				do_action('add_reserve_book');
 				/* Also can hook in to after_reserve_button */
-											
+				echo "<!-- AA -->";										
 											
 				############################
 				/* Book meta hook */
