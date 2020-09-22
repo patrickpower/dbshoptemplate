@@ -102,7 +102,7 @@
 				</li>
 				<?php $args = array('taxonomy'=>'book_category');
 					  $bookCats = get_terms($args);
-					  if(count($bookCats > 0)){
+					  if(count($bookCats) > 0){
 					 $linkToBooks = rwmb_meta( 'link_to_this_book_cat', ['object_type' => 'setting'], 'shop_options' );
 						if(isset($linkToBooks)){ $link = $linkToBooks;} else{  $link = $bookCats[0]->term_id;}
 				?>
@@ -145,4 +145,4 @@
 		</nav>
 	</header>
 	
-	<main id="page-wrap" class="container<?php if(is_home){echo " homepage";}?>">
+	<main id="page-wrap" class="container<?php if(is_home()){echo " homepage";}?>">
