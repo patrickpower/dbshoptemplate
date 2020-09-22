@@ -51,7 +51,7 @@
 	<?php do_action('after_reserve_button'); 
 	}
 
-add_action('add_reserve_book','send_conf_to_customer');
+add_action('add_reserve_book','send_conf_to_customer',20);
 function send_conf_to_customer(){
 	
 	if(!isset($_GET['submit'])) return;
