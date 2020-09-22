@@ -3,10 +3,6 @@ add_theme_support('post-thumbnails');
 
 //add_image_size('mobile','1020','520',array('center','center'));
 
-add_action('add_reserve_book','test_func');
-function test_func(){
-	echo "<hr>";
-}
 
 //Images shortcut
 function images() {  

@@ -1,4 +1,9 @@
 <?php
+	add_action('add_reserve_book','test_func');
+	function test_func(){
+		echo "<hr>";
+	}
+
 	// Reserve a book
 	add_action('add_reserve_book','reserve_button',10);
 	function reserve_button(){
