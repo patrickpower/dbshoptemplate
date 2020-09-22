@@ -2,6 +2,7 @@
 	// Reserve a book
 	add_action('add_reserve_book','reserve_button',10,2);
 	function reserve_button(){
+		echo "<!-- Before hook -->";
 		$isBookAvailable = get_post_meta(get_the_ID(),'book_available',true);
 		if(!$isBookAvailable) return; ?>
 		<div class="reserve_button_holder">
