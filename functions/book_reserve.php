@@ -5,8 +5,8 @@
 	}
 
 	// Reserve a book
-	add_action('add_reserve_book','reserve_button',10);
-	function reserve_button(){
+	add_action('add_reserve_book','include_reserve_button',10, 2);
+	function include_reserve_button(){
 		echo "<!-- Before hook -->";
 		$isBookAvailable = get_post_meta(get_the_ID(),'book_available',true);
 		if(!$isBookAvailable) return; ?>
