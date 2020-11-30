@@ -5,7 +5,7 @@
 			the_post();?>
 <article class="single-page_container">	
 	<section class="section-title_container row">
-		<div class="col">
+		<div class="col text-center">
 			<h1><?php echo get_the_title();?></h1>
 		</div>
 	</section>
