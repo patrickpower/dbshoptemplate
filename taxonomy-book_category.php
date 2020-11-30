@@ -30,6 +30,11 @@
 			<?php }?>
 		</div>
 	</section>
+<?php if("publish" === get_post_status(get_page_by_path('order-a-book')->ID)){
+	echo "..";
+}?>
+
+
 
 <?php if(have_posts()){ ?>
 <section class="archive_books-container row">
