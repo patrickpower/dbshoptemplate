@@ -55,7 +55,17 @@ if("publish" === get_post_status($orderPage->ID)){?>
 				<p class="homepage_book-price"><?php display_book_price(get_the_ID());?></p>
 			</div>
 	</article>
-<?php		}?> </section><?php
+<?php		}?> </section>
+<?php $orderPage = get_page_by_path('order-a-book');
+
+if("publish" === get_post_status($orderPage->ID)){?>
+	<section class="order-form_banner row">
+		<div class="col">
+			<p class="text-center m-0">Can't find what you're looking for? Use our Order Form to request a book or get a recommendation from our booksellers. <a href="/order-a-book"><u>Click here</u></a></p>
+		</div>
+	</section>
+<?php }?>
+<?php
 } else { echo "<h4>There are currently no books available in this category.</h4>"; } ?>
 
 <?php get_template_part('footer');?>

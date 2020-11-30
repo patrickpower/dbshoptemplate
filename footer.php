@@ -50,6 +50,10 @@
 						</div>
 						<div class="col-md-4">
 							<ul>
+								<?php $orderPage = get_page_by_path('order-a-book');
+									if("publish" === get_post_status($orderPage->ID)){?>
+									<li><a href="/order-a-book">Order a Book</a></li>
+								<?php }?>
 								<li><a href="/events">Events</a></li>
 								<?php if( rwmb_meta('enable_blog_on_website',['object_type' => 'setting'], 'shop_options' ) == "1"):?>
 								<li><a href="/category/news">
