@@ -120,7 +120,7 @@
 						<?php echo rwmb_meta( 'display_title_for_blog', ['object_type' => 'setting'], 'shop_options' ) == "display_as_news" ? "News" : "Blog";?></a>
 					</li>
 				<?php endif;
-				$isPublished = get_post_status(get_page_by_title('About')); if($isPublished == "publish"){?>
+				$isPublished = get_post_status(get_page_by_path('/about')->ID); if($isPublished === "publish"){?>
 				<li>
 					<a href="/about">About</a>
 				</li>
