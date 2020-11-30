@@ -706,6 +706,15 @@ nav ul {
 	width:100%;
 	text-align:center;
 }
+.order-form_banner {
+	background-color: #f5f5f5;
+	width: 100vw;
+	margin-left: 50%;
+	@include prefix(transform,translateX(-50vw),webkit ms);
+	padding: 30px;
+	margin-top: 45px;
+}
+
 
 .order-page_content {
 	padding:30px 0;
