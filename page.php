@@ -4,7 +4,7 @@
 		while(have_posts()){
 			the_post();?>
 <article class="single-page_container">	
-	<section class="section-title_container row">
+	<section class="section-title_container row mb-5">
 		<div class="col text-center">
 			<h1><?php echo get_the_title();?></h1>
 		</div>
