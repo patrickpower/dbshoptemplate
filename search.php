@@ -34,7 +34,7 @@
 <?php } ?>
 
 <?php
-} else { echo "<h1>Oops, nothing found here.</h1>"; } ?>
+} else { echo "<p class='text-center w-100 text-muted'>Unfortunately nothing matched your search terms."; } ?>
 </section>
 <section class="order-form_banner row mt-0">
 		<div class="col">

@@ -82,6 +82,11 @@
 	<header class="container">
 		<div id="menu-button"><i class="fa fa-bars"></i></div>
 		<section class="header-logo_container row">
+			<div class="d-none d-lg-flex header-newsletter">
+				<?php $show = rwmb_meta( 'display_newsletter_on_homepage', ['object_type' => 'setting'], 'shop_options' ); if($show){?>
+				<a href="/#newsletter"><span class="d-inline-block mr-3"><i class="fas fa-paper-plane"></i></span>Join our newsletter</a>
+				<?php } ?>
+			</div>
 			<div class="header-logo col">
 				<a href="/">
 				<?php if(get_shop_logo() !== false){?>
@@ -94,9 +99,18 @@
 				<?php }?>
 				</a>
 			</div>
+			<div class="desktop__socials d-none d-lg-flex justify-content-lg-end">
+				<?php	$fb = rwmb_meta( 'shop_facebook', ['object_type' => 'setting'], 'shop_options' );
+						$tw = rwmb_meta( 'shop_twitter', ['object_type' => 'setting'], 'shop_options' );
+						$ig = rwmb_meta( 'shop_instagram', ['object_type' => 'setting'], 'shop_options' );
+					  echo $fb ? '<a href="'.$fb.'" target="_blank"><span><i class="fab fa-facebook-f"></i></span></a>' : '';
+					  echo $tw ? '<a href="'.$tw.'" target="_blank" class="pl-3"><span><i class="fab fa-twitter"></i></span></a>' : '';
+					  echo $ig ? '<a href="'.$ig.'" target="_blank" class="pl-3"><span><i class="fab fa-instagram"></i></span></a>' : '';
+					?>
+			</div>
 		</section>
-		<nav class="row">
-			<ul role="navigation">
+		<nav class="row border-top border-bottom py-lg-2">
+			<ul role="navigation" class="d-lg-flex align-items-lg-center flex-lg-grow-1">
 				<li>
 					<a href="/">Home</a>
 				</li>
@@ -129,11 +143,8 @@
 					<a href="/contact">Contact</a>
 				</li>
 				<?php
-					$fb = rwmb_meta( 'shop_facebook', ['object_type' => 'setting'], 'shop_options' );
-					$tw = rwmb_meta( 'shop_twitter', ['object_type' => 'setting'], 'shop_options' );
-					$ig = rwmb_meta( 'shop_instagram', ['object_type' => 'setting'], 'shop_options' );
 					if($fb || $tw || $ig):?>
-				<li class="social-media_links">
+				<li class="social-media_links d-lg-none">
 					<?php 
 						echo $fb ? '<a href="'.$fb.'" target="_blank"><span><i class="fab fa-facebook-f"></i></span></a>' : '';
 						echo $tw ? '<a href="'.$tw.'" target="_blank"><span><i class="fab fa-twitter"></i></span></a>' : '';
@@ -142,6 +153,13 @@
 				</li>
 				<?php endif;?>
 			</ul>
+			<div class="nav_search">
+				<form action="/">
+					<div class="input-group">
+						<input name="s" class="form-control nav__search__bar" placeholder="Search by author, title, ISBN...">
+					</div>
+				</form>
+			</div>
 		</nav>
 	</header>
 	

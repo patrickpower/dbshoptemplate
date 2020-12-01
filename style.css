@@ -538,7 +538,7 @@ html, body {
   @media (min-width: 992px) {
     :root {
       --footerHeight:280px;
-      --headerHeight:240px; } }
+      --headerHeight:190px; } }
 
 body {
   border-top: 6px solid black;
@@ -681,6 +681,10 @@ article.contact-page {
   .container {
     max-width: 960px; } }
 
+@media (min-width: 992px) {
+  .desktop__socials {
+    width: 170px; } }
+
 p.event-date {
   font-weight: 600;
   font-size: 1.2rem; }
@@ -812,7 +816,7 @@ header {
   -ms-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 185px; }
+  height: 120px; }
   @media (max-width: 991px) {
     .header-logo_container {
       z-index: 4; } }
@@ -825,11 +829,16 @@ header {
   .header-logo img {
     width: auto;
     max-height: 120px;
-    max-width: 500px; }
+    max-width: 190px;
+    display: block;
+    margin: 0 auto; }
     @media (max-width: 991px) {
       .header-logo img {
         max-height: 65px;
         max-width: 190px; } }
+
+.header-newsletter {
+  width: 170px; }
 
 .highlight {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, yellow 50%);
@@ -1067,10 +1076,21 @@ form[class^="mc4wp-form"] .mc4wp-form-fields {
       form[class^="mc4wp-form"] .mc4wp-form-fields p.terms label.terms input {
         margin-right: 5px; }
 
+@media (min-width: 992px) {
+  .nav_search {
+    width: 33.33%; } }
+
+@media (min-width: 992px) {
+  .nav__search__bar {
+    background-image: url(images/search.png);
+    background-position-x: 98%;
+    background-position-y: 7px;
+    background-size: 20px;
+    background-repeat: no-repeat; } }
+
 nav ul {
   list-style: none;
   padding: 0;
-  width: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -moz-box;
@@ -1082,9 +1102,6 @@ nav ul {
   -ms-justify-content: space-around;
   justify-content: space-around;
   -ms-flex-pack: space-around; }
-  @media (min-width: 992px) {
-    nav ul {
-      width: 90%; } }
   nav ul li {
     display: inline-block;
     text-transform: uppercase;
@@ -1138,7 +1155,7 @@ nav ul {
     width: 100vw;
     top: 0;
     left: 0;
-    z-index: 1; } }
+    z-index: 2; } }
 #menu-button {
   position: absolute;
   top: 30px;

@@ -49,7 +49,7 @@ html, body {
 	
 	@include desktop {
 		--footerHeight:280px;
-		--headerHeight:240px;
+		--headerHeight:190px;
 	}
 	@include xs {
 	//	font-size:80%;
@@ -207,6 +207,12 @@ article.contact-page {
 	}
 }
 
+.desktop__socials {
+	@include desktop{
+		width:170px;
+	}
+}
+
 p.event-date {
 	font-weight:600;
 	font-size:1.2rem;
@@ -361,7 +367,7 @@ header {
 	padding:0;
 	@include display_flex();
 	@include align-items(center);
-	height:185px;
+	height:120px;
 	@include device {
 		z-index:4;
 	}
@@ -373,15 +379,24 @@ header {
 .header-logo {
 	text-align:center;
 	
+	@include desktop {
+		//padding-left:80px;
+	}
 	& img { // Main logo
 		width:auto;
 		max-height:120px;
-		max-width:500px;
+		max-width:190px;
+		display:block;
+		margin:0 auto;
 		@include device {
 			max-height:65px;
 			max-width:190px;
 		}
 	}
+}
+
+.header-newsletter {
+	width:170px;
 }
 
 .highlight {
@@ -606,16 +621,30 @@ form[class^="mc4wp-form"] .mc4wp-form-fields {
 		}
 	}
 }
+.nav_search {
+	@include desktop {
+		width:33.33%;
+	}
+}
+.nav__search__bar {
+	@include desktop {
+		background-image:url(images/search.png);
+		background-position-x:98%;
+		background-position-y:7px;
+		background-size:20px;
+		background-repeat:no-repeat;
+	}
+}
 
 nav ul {
 	list-style: none;
 	padding:0;
-	width:100%;
+	//width:100%;
 	margin:0 auto;
 	@include display_flex();
 	@include justify-content(space-around);
 	@include desktop {
-		width:90%;
+		//width:90%;
 	}
 	& li {
 		display:inline-block;
@@ -680,7 +709,7 @@ nav ul {
 			width:100vw;
 			top:0;
 			left:0;
-			z-index:1;	
+			z-index:2;	
 		}
 	}
 }
