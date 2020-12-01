@@ -1088,6 +1088,19 @@ form[class^="mc4wp-form"] .mc4wp-form-fields {
     background-size: 20px;
     background-repeat: no-repeat; } }
 
+@media (min-width: 992px) {
+  @supports (width: 100vw) {
+    .nav_ {
+      width: 100vw;
+      margin-left: 50%;
+      -webkit-transform: translateX(-50vw);
+      -moz-transform: translateX(-50vw);
+      -ms-transform: translateX(-50vw);
+      -o-transform: translateX(-50vw);
+      transform: translateX(-50vw);
+      padding-left: var(--gutter);
+      padding-right: var(--gutter); } } }
+
 nav ul {
   list-style: none;
   padding: 0;

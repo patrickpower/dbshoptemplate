@@ -109,7 +109,7 @@
 					?>
 			</div>
 		</section>
-		<nav class="row border-top border-bottom py-lg-2">
+		<nav class="row border-top border-bottom py-lg-2 nav_">
 			<ul role="navigation" class="d-lg-flex align-items-lg-center flex-lg-grow-1">
 				<li>
 					<a href="/">Home</a>
@@ -139,6 +139,11 @@
 					<a href="/about">About</a>
 				</li>
 				<?php */}?>
+				<?php if("publish" === get_post_status($orderPage->ID)){?>
+				<li>
+					<a href="/order-a-book">Order a Book</a>
+				</li>
+				<?php }?>
 				<li>
 					<a href="/contact">Contact</a>
 				</li>

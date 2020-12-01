@@ -636,6 +636,18 @@ form[class^="mc4wp-form"] .mc4wp-form-fields {
 	}
 }
 
+.nav_ {
+	@include desktop {
+		@supports(width:100vw){
+			width:100vw;
+			margin-left:50%;
+			@include prefix(transform,translateX(-50vw),webkit moz ms o);
+			padding-left:var(--gutter);
+			padding-right: var(--gutter);
+		}
+	}
+}
+
 nav ul {
 	list-style: none;
 	padding:0;
