@@ -139,11 +139,9 @@
 					<a href="/about">About</a>
 				</li>
 				<?php */}?>
-				<?php if("publish" === get_post_status($orderPage->ID)){?>
 				<li>
 					<a href="/order-a-book">Order a Book</a>
 				</li>
-				<?php }?>
 				<li>
 					<a href="/contact">Contact</a>
 				</li>
