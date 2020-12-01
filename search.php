@@ -1,13 +1,21 @@
 <?php 
 	get_template_part('header');
 ?>
-	<section class="section-title_container row">
+	<section class="order-form_banner row mt-0">
+		<div class="col">
+			<p class="text-center m-0">Can't find what you're looking for? Use our Order Form to request a book or get a recommendation from our booksellers. <a href="/order-a-book"><u>Click here</u></a></p>
+		</div>
+	</section>
+	<section class="section-title_container row mt-5">
 		<div class="col text-center">
 			<h1>Search results for “<?php echo $_GET['s'];?>”</h1>
 		</div>
 	</section>
+	
+	<section class="archive_books-container row mt-n3">
 <?php if(have_posts()){ ?>
-	<section class="archive_books-container row">
+	
+		
 <?php 	while(have_posts()){
 			the_post();
 	$id = get_the_ID();?>
@@ -23,8 +31,14 @@
 </article>
 
 
-<?php } ?></section>
+<?php } ?>
+
 <?php
 } else { echo "<h1>Oops, nothing found here.</h1>"; } ?>
-</article>
+</section>
+<section class="order-form_banner row mt-0">
+		<div class="col">
+			<p class="text-center m-0">Can't find what you're looking for? Use our Order Form to request a book or get a recommendation from our booksellers. <a href="/order-a-book"><u>Click here</u></a></p>
+		</div>
+	</section>
 <?php get_template_part('footer');?>
