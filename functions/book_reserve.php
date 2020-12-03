@@ -16,7 +16,7 @@
 			<div role="modal" class="reserve_button_modal_outer">
 				<p id="close-reserve_modal">&times;</p>
 				<p class="reserve_button highlight d-inline-block" role="button">Reserve a copy <img src="<?php images();?>/right_arrow.png" width="13"></p>
-				<p class="reserve_button_modal_content">Reserve a copy of <em><?php echo get_the_title();?></em> for collection at <?php echo get_the_shop_name(true);?>. If you provide your email address below, we will contact you when this title is ready for collection.</p>
+				<p class="reserve_button_modal_content">Reserve a copy of <em><?php echo get_the_title();?></em> for collection at <?php echo get_the_shop_name(true);?>. If you provide your email address below, we will contact you when this item is ready for collection. For delivery by post add the address to the order notes and we will be in touch to arrange payment.</p>
 				<form id="reserve_a_book" action="">
 					<input type="hidden" value="book_reservation_submitted" name="reservation_request">
 					<input type="hidden" value="<?php echo get_the_title();?>" name="book_title">
