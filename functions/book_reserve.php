@@ -7,7 +7,7 @@
 	// Reserve a book
 	add_action('add_reserve_book','include_reserve_button',10, 2);
 	function include_reserve_button(){
-		echo "<!-- Before hook -->";
+		if(rwmb_meta( 'enable_book_reservations', ['object_type' => 'setting'], 'shop_options' ) != 1 ) return;
 		$isBookAvailable = get_post_meta(get_the_ID(),'book_available',true);
 		if(!$isBookAvailable) return; ?>
 		<div class="reserve_button_holder">
