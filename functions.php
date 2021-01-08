@@ -21,7 +21,7 @@ function enqueues() //Enqueue the CSS & jQuery files...
 	{
 		wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' ); // BOOTSTRAP CSS
 		//wp_enqueue_style( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css');		// Slick CSS
-		wp_enqueue_style( 'style', get_stylesheet_uri(),'','0.47','' );		// STYLE.CSS
+		wp_enqueue_style( 'style', get_stylesheet_uri(),'','0.57','' );		// STYLE.CSS
     
 		wp_register_script('fontawesome','https://use.fontawesome.com/releases/v5.1.0/js/all.js','','');// FontAwesome
 		wp_register_script('scripts', get_template_directory_uri(). '/js/scripts.js',array('jquery'),'',true); // THE TEMPLATE SCRIPTS
