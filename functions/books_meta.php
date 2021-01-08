@@ -71,11 +71,13 @@ function add_author_details_to_excerpt(){
 	if("book" !== get_post_type()) return;
 	remove_action('save_post','add_author_details_to_excerpt');
 	$author = get_post_meta(get_the_ID(),'book_author',true);
+	$isbn = get_post_meta(get_the_ID(),'book_isbn',true);
 	$content = get_post_field('post_content', get_the_ID());
+	if(substr($content, -strlen("-->")) == "-->") return;
 	$args = array(
 		'ID'=>get_the_ID(),
 		'post_title'=>get_the_title(get_the_ID()),
-		'post_content'=>$content."<br><!--".$author."-->"
+		'post_content'=>$content."<!--".$author." ".$isbn."-->"
 	);
 	wp_update_post($args);
 	add_action('save_post','add_author_details_to_excerpt');

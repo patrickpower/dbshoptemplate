@@ -82,10 +82,13 @@
 	<header class="container">
 		<div id="menu-button"><i class="fa fa-bars"></i></div>
 		<section class="header-logo_container row">
-			<div class="d-none d-lg-flex header-newsletter">
+			<div class="header-newsletter">
 				<?php $show = rwmb_meta( 'display_newsletter_on_homepage', ['object_type' => 'setting'], 'shop_options' ); if($show){?>
-				<a href="/#newsletter"><span class="d-inline-block mr-3"><i class="fas fa-paper-plane"></i></span>Join our newsletter</a>
+				<a href="/#newsletter"><span class="d-inline-block mr-lg-3 plane"><i class="fas fa-paper-plane"></i></span><span class="d-none d-lg-inline">Join our newsletter</span></a>
 				<?php } ?>
+			</div>
+			<div class="header-search-trigger d-lg-none">
+				<span id="trigger"><i class="fa fa-search"></i></span>
 			</div>
 			<div class="header-logo col">
 				<a href="/">
@@ -120,10 +123,12 @@
 					 $linkToBooks = rwmb_meta( 'link_to_this_book_cat', ['object_type' => 'setting'], 'shop_options' );
 						if(isset($linkToBooks)){ $link = $linkToBooks;} else{  $link = $bookCats[0]->term_id;}
 				?>
+				<?php if($link){?>
 				<li>
 					<a href="<?php echo get_term_link($link);?>">Books</a>
 				</li>
-				<?php }
+				
+				<?php } }
 				$iseventsPagePublished = get_post_status(get_page_by_title('Events')); if($isEventsPagePublished == "publish"){?>
 				<li>
 					<a href="/about">Events</a>

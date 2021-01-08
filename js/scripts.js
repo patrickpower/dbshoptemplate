@@ -10,9 +10,13 @@ jQuery(document).ready(function($){
 	$('#menu-button').click(function(){
 		
 		$('nav, body').toggleClass('menuOpen');
-		
+		$('.nav_search').removeClass('vis');
 	})
 	
+	$('.header-search-trigger').click(function(){
+		$('.nav_search').toggleClass('vis');
+		$('nav, body').removeClass('menuOpen');
+	})
 	
 	$('#reserve_a_book').click(function(){
 		$('.reserve_button_holder, .reserve_button_modal_outer').addClass('modal_visible');

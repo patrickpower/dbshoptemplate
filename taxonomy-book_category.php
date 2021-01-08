@@ -11,7 +11,7 @@
 		<div class="col archive-categories_inner">
 			<?php $args = array(
 						'taxonomy'=>'book_category',
-						'hide_empty'=>true
+						'hide_empty'=>false
 					);
 				$terms = get_terms($args);
 				foreach($terms as $term){
@@ -44,6 +44,9 @@ if("publish" === get_post_status($orderPage->ID)){?>
 
 <?php if(have_posts()){ ?>
 <section class="archive_books-container row">
+	<div class="col-12 mb-4">
+			<h3><?php echo get_term($archiveID)->name;?></h3>
+		</div>
 		<?php while(have_posts()){
 			the_post();?>
 	<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book archive" role="link" data-href="<?php echo get_permalink();?>">
@@ -56,6 +59,27 @@ if("publish" === get_post_status($orderPage->ID)){?>
 			</div>
 	</article>
 <?php		}?> </section>
+
+<nav class=" w-100">
+		<?php 
+			echo paginate_links( array(
+				'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+				'current'      => max( 1, get_query_var( 'paged' ) ),
+				'format'       => '?paged=%#%',
+				'show_all'     => false,
+				'type'         => 'list',
+				'end_size'     => 2,
+				'mid_size'     => 1,
+				'prev_next'    => false,
+						'prev_text'    => sprintf( '<i></i> %1$s', __( 'Newer Posts', 'text-domain' ) ),
+						'next_text'    => sprintf( '%1$s <i></i>', __( 'Older Posts', 'text-domain' ) ),
+				'add_args'     => false,
+			) );
+		?>
+</nav>
+
+
+
 <?php $orderPage = get_page_by_path('order-a-book');
 
 if("publish" === get_post_status($orderPage->ID)){?>
@@ -66,6 +90,6 @@ if("publish" === get_post_status($orderPage->ID)){?>
 	</section>
 <?php }?>
 <?php
-} else { echo "<h4>There are currently no books available in this category.</h4>"; } ?>
+} else { echo "<h4 class='my-5'>There are currently no books available in this category.</h4>"; } ?>
 
 <?php get_template_part('footer');?>

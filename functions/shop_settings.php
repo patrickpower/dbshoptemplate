@@ -201,9 +201,11 @@ add_filter( 'rwmb_meta_boxes', function ( $meta_boxes ) {
 				'id' => 'book_cats_on_homepage',
 				'type' => 'taxonomy_advanced',
 				'name' => esc_html__( 'Books on homepage', 'metabox-online-generator' ),
-				'desc' => esc_html__( 'Display these book categories on the homepage', 'metabox-online-generator' ),
+				'desc' => esc_html__( 'Display these book categories on the homepage. To choose the books to display, visit Books > Book Categories', 'metabox-online-generator' ),
 				'taxonomy' => 'book_category',
-				'field_type' => 'checkbox_tree',
+				'field_type' => 'select_advanced',
+				'clone'=>true,
+				'sort_clone'=>true
 			),
 			array(
 				'id' =>'link_to_this_book_cat',

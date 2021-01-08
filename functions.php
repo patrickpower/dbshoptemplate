@@ -62,6 +62,7 @@ get_template_part('functions/homepage_notice');
 get_template_part('functions/disable_books');
 get_template_part('functions/order-book');
 get_template_part('functions/newsletter_homepage');
+get_template_part('functions/choose_books_to_display');
 
 
 
@@ -118,7 +119,7 @@ add_action('pre_get_posts', 'filter_press_tax');
 
     function filter_press_tax( $query ){
 		if(is_tax('book_category')){
-			$query->set('posts_per_page',-1);
+			$query->set('posts_per_page',18);
 		}
     }
 

@@ -586,22 +586,48 @@ a.anchor {
   -ms-flex-align: baseline;
   align-items: baseline; }
 
-.archive-categories_inner {
-  padding-top: 45px; }
-  @media (min-width: 769px) {
-    .archive-categories_inner {
-      column-count: 2; } }
-  @media (min-width: 992px) {
-    .archive-categories_inner {
-      column-count: 3; } }
-  .archive-categories_inner a {
-    display: block; }
-    .archive-categories_inner a.selected {
-      -webkit-box-ordinal-group: -1;
-      -moz-box-ordinal-group: -1;
-      -ms-flex-order: -1;
-      -webkit-order: -1;
-      order: -1; }
+@media (max-width: 768px) {
+  .archive-categories_inner {
+    width: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-left: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none; }
+    .archive-categories_inner:after {
+      width: 60px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, white);
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0; }
+    .archive-categories_inner::-webkit-scrollbar {
+      display: none; } }
+@media (min-width: 769px) {
+  .archive-categories_inner {
+    padding-top: 45px;
+    column-count: 2; } }
+@media (min-width: 992px) {
+  .archive-categories_inner {
+    column-count: 3; } }
+.archive-categories_inner a {
+  display: block; }
+  .archive-categories_inner a.selected {
+    -webkit-box-ordinal-group: -1;
+    -moz-box-ordinal-group: -1;
+    -ms-flex-order: -1;
+    -webkit-order: -1;
+    order: -1; }
+  @media (max-width: 768px) {
+    .archive-categories_inner a {
+      display: inline-block; } }
 
 .archive-terms {
   display: inline-block;
@@ -837,8 +863,21 @@ header {
         max-height: 65px;
         max-width: 190px; } }
 
-.header-newsletter {
-  width: 170px; }
+@media (max-width: 991px) {
+  .header-newsletter {
+    width: 30px;
+    position: absolute;
+    z-index: 3;
+    left: 15px; } }
+@media (min-width: 992px) {
+  .header-newsletter {
+    width: 170px; } }
+
+@media (max-width: 991px) {
+  .header-search-trigger {
+    position: absolute;
+    left: 45px;
+    z-index: 3; } }
 
 .highlight {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, yellow 50%);
@@ -904,6 +943,8 @@ header {
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex; } }
+  .homepage_book.on_homepage:nth-of-type(7), .homepage_book.on_homepage:nth-of-type(8) {
+    display: none; }
   .homepage_book img {
     max-width: 100%;
     -webkit-flex-shrink: 0;
@@ -1079,6 +1120,20 @@ form[class^="mc4wp-form"] .mc4wp-form-fields {
 @media (min-width: 992px) {
   .nav_search {
     width: 33.33%; } }
+@media (max-width: 991px) {
+  .nav_search {
+    width: 100%;
+    margin-top: -2px;
+    padding: 0 5px;
+    background-color: white;
+    z-index: 3;
+    max-height: 0;
+    overflow: hidden; }
+    .nav_search form {
+      padding-bottom: 5px; }
+    .nav_search.vis {
+      max-height: 999px;
+      transition: max-height ease 0.4s; } }
 
 @media (min-width: 992px) {
   .nav__search__bar {
@@ -1126,11 +1181,25 @@ nav ul {
     nav ul li:not(.social-media_links):hover a {
       text-decoration: none;
       color: #666666; }
+  nav ul.page-numbers {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
+    nav ul.page-numbers li {
+      padding: 0 5px;
+      margin: 0 4px;
+      background-color: #fafafa;
+      color: #999; }
+      nav ul.page-numbers li span.current {
+        color: black; }
 
 @media (max-width: 991px) {
   nav ul {
     z-index: -999;
     max-height: 0px;
+    width: 100%;
     visibility: hidden; }
 
   nav.menuOpen ul {
@@ -1141,6 +1210,7 @@ nav ul {
     background-color: #f3f3f3;
     position: absolute;
     z-index: 3;
+    margin-top: -2px;
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     -ms-flex-direction: column;

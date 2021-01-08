@@ -3,11 +3,12 @@
 	add_action('homepage_books','show_books_on_homepage');
 	
 	function show_books_on_homepage(){
-		
+	
 		$categories = rwmb_meta( 'book_cats_on_homepage', ['object_type' => 'setting'], 'shop_options' );
 		foreach ($categories as $cat){
 			$id = $cat->term_id;
 			$name = $cat->name;
+			$chosen_books = get_term_meta($id,'chosen_book',true);
 			?>
 		<section class="section-title_container row">
 			<div class="col text-center">
@@ -15,11 +16,25 @@
 			</div>
 		</section>
 		<section class="homepage_books-row row">
+			<?php $number = count($chosen_books);
+			foreach ($chosen_books as $chosen_book) {?>
+				<article class="col-6 col-sm-4 col-md-3 col-lg-2 homepage_book on_homepage" role="link" data-href="<?php echo get_permalink($chosen_book);?>">
 
+						<img src="<?php echo get_the_post_thumbnail_url($chosen_book,'full');?>"
+							 alt="<?php echo get_the_title($chosen_book);?> by <?php echo get_post_meta($chosen_book,'book_author',true);?> | <?php echo get_post_meta($chosen_book,'book_isbn',true);?>">
+						<div>
+							<p class="homepage_book-title"><?php echo get_the_title($chosen_book);?></p>
+							<p class="homepage_book-author"><?php echo get_post_meta($chosen_book,'book_author',true);?></p>
+							<p class="homepage_book-price"><?php display_book_price($chosen_book);?></p>
+						</div>
+				</article>
+			<?php } ?>
+			
+			
 			<?php $args = array(
 					'post_type'=>'book',
-					'posts_per_page'=>6,
-//					'orderby'=>'RAND',
+					'posts_per_page'=>7 - $number,
+					'exclude' => $chosen_books,
 					'order'=>'DESC',
 					'tax_query'=>array(
 						array(

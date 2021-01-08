@@ -97,9 +97,31 @@ a.anchor {
 }
 
 .archive-categories_inner {
-
-	padding-top:45px;
+	@include phone {
+		width: auto;
+		overflow-x: scroll;
+		white-space: nowrap;
+		padding-left: 0;
+		@include display_flex();
+		position:relative;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+		&:after {
+			width: 60px;
+			height: 100%;
+			background: linear-gradient(to right, transparent, white);
+			position: absolute;
+			content: "";
+			top: 0;
+			right: 0;
+		}
+		&::-webkit-scrollbar {
+			display:none;
+		}
+	}
+	
 	@include phone-up {
+		padding-top:45px;
 		column-count:2;
 	}
 	@include desktop {
@@ -109,6 +131,9 @@ a.anchor {
 		display:block;
 		&.selected {
 			@include order(-1);
+		}
+		@include phone {
+			display:inline-block;
 		}
 	}
 }
@@ -396,7 +421,23 @@ header {
 }
 
 .header-newsletter {
-	width:170px;
+	@include device {
+		width:30px;
+		position:absolute;
+		z-index:3;
+		left:15px;
+	}
+	@include desktop{
+		width:170px;
+	}
+}
+
+.header-search-trigger {
+	@include device{
+		position:absolute;
+		left:45px;
+		z-index:3;
+	}
 }
 
 .highlight {
@@ -451,6 +492,9 @@ header {
 		@include desktop {
 			@include display_flex();
 		}
+	}
+	&.on_homepage:nth-of-type(7), &.on_homepage:nth-of-type(8){
+		display:none;
 	}
 	& img {
 		max-width:100%;
@@ -625,6 +669,22 @@ form[class^="mc4wp-form"] .mc4wp-form-fields {
 	@include desktop {
 		width:33.33%;
 	}
+	@include device {
+		width:100%;
+		margin-top:-2px;
+		padding:0 5px;
+		background-color: white;
+		z-index:3;
+		max-height:0;
+		overflow:hidden;
+		& form {
+			padding-bottom:5px;
+		}
+		&.vis {
+			max-height:999px;
+			transition:max-height ease 0.4s;
+		}
+	}
 }
 .nav__search__bar {
 	@include desktop {
@@ -677,6 +737,18 @@ nav ul {
 			}
 		}
 	}
+	&.page-numbers {
+		@include justify-content(center);
+		& li {
+			padding:0 5px;
+			margin:0 4px;
+			background-color:#fafafa;
+			color:#999;
+			& span.current{
+				color:black;
+			}
+		}
+	}
 }
 
 
@@ -684,6 +756,7 @@ nav ul {
 	nav ul {
 		z-index:-999;
 		max-height:0px;
+		width:100%;
 		visibility: hidden;
 		
 	}
@@ -697,6 +770,7 @@ nav ul {
 		background-color:#f3f3f3;
 		position:absolute;
 		z-index:3;
+		margin-top:-2px;
 		@include flex-direction(column);
 		@include align-items(center);
 		& li {
