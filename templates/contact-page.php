@@ -46,7 +46,13 @@
 		<h1>Opening Hours</h1>
 	</div>
 </section>
+
 <section class="contact-page_opening-hours row">
+	<?php if(get_the_content() !== ""){?>
+	<section class="col-12 mb-4">
+		<?php the_content();?>
+	</section>
+	<?php } ?>
 	<section class="col-sm-6">
 		<?php is_shop_open_now();?>
 	</section>
