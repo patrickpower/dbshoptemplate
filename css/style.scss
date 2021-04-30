@@ -753,7 +753,7 @@ nav ul {
 
 
 @include device {
-	nav ul {
+	nav:not(.pagination_) ul {
 		z-index:-999;
 		max-height:0px;
 		width:100%;

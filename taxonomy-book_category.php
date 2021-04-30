@@ -60,7 +60,7 @@ if("publish" === get_post_status($orderPage->ID)){?>
 	</article>
 <?php		}?> </section>
 
-<nav class=" w-100">
+<nav class="pagination_ w-100">
 		<?php 
 			echo paginate_links( array(
 				'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
